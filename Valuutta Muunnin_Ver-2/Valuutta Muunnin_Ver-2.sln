@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValuuttaMuunnin_Ver-2", "ValuuttaMuunnin_Ver-2\ValuuttaMuunnin_Ver-2.csproj", "{9629BA7C-4C6A-48ED-9323-FC61D152889A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9629BA7C-4C6A-48ED-9323-FC61D152889A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9629BA7C-4C6A-48ED-9323-FC61D152889A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9629BA7C-4C6A-48ED-9323-FC61D152889A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9629BA7C-4C6A-48ED-9323-FC61D152889A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A827527-85CD-4005-8A47-6A84CC305447}
+	EndGlobalSection
+EndGlobal
