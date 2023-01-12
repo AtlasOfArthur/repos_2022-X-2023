@@ -13,6 +13,12 @@ namespace XamarinApp1._0
         public MainPage()
         {
             InitializeComponent();
+        } //Tämän alla uutta (void handle clicker)
+        int count = 0;
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            count++;
+            ((Button)sender).Text = $"Klikkasit {count} kertaa.";
         }
     }
 }
