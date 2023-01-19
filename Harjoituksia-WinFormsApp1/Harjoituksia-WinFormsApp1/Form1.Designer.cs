@@ -57,9 +57,8 @@
             this.T5_LB = new System.Windows.Forms.Label();
             this.lukujenJärjTXT_T5 = new System.Windows.Forms.Label();
             this.annaLukujaTXT_T5 = new System.Windows.Forms.Label();
-            this.luvut_T5 = new System.Windows.Forms.Label();
+            this.vastaus_T5 = new System.Windows.Forms.Label();
             this.textBox_T5 = new System.Windows.Forms.TextBox();
-            this.manualChangeTESTBox_T5 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // T1_LB
@@ -390,15 +389,15 @@
             this.annaLukujaTXT_T5.TabIndex = 43;
             this.annaLukujaTXT_T5.Text = "Anna lukuja (-999 lopetus) ";
             // 
-            // luvut_T5
+            // vastaus_T5
             // 
-            this.luvut_T5.AutoSize = true;
-            this.luvut_T5.Location = new System.Drawing.Point(36, 458);
-            this.luvut_T5.Name = "luvut_T5";
-            this.luvut_T5.Size = new System.Drawing.Size(41, 20);
-            this.luvut_T5.TabIndex = 44;
-            this.luvut_T5.Text = "luvut";
-            this.luvut_T5.Visible = false;
+            this.vastaus_T5.AutoSize = true;
+            this.vastaus_T5.Location = new System.Drawing.Point(36, 458);
+            this.vastaus_T5.Name = "vastaus_T5";
+            this.vastaus_T5.Size = new System.Drawing.Size(57, 20);
+            this.vastaus_T5.TabIndex = 44;
+            this.vastaus_T5.Text = "vastaus";
+            this.vastaus_T5.Visible = false;
             // 
             // textBox_T5
             // 
@@ -408,25 +407,14 @@
             this.textBox_T5.TabIndex = 45;
             this.textBox_T5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_T5_KeyPress);
             // 
-            // manualChangeTESTBox_T5
-            // 
-            this.manualChangeTESTBox_T5.Location = new System.Drawing.Point(218, 420);
-            this.manualChangeTESTBox_T5.Name = "manualChangeTESTBox_T5";
-            this.manualChangeTESTBox_T5.Size = new System.Drawing.Size(91, 27);
-            this.manualChangeTESTBox_T5.TabIndex = 46;
-            this.manualChangeTESTBox_T5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.manualChangeTESTBox_T5_KeyPress); 
-            // Vanha rivi: this.manualChangeTESTBox_T5.TextChanged += new System.EventHandler(this.manualChangeTESTBox_T5_TextChanged);
-            //
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 589);
-            this.Controls.Add(this.manualChangeTESTBox_T5);
             this.Controls.Add(this.textBox_T5);
-            this.Controls.Add(this.luvut_T5);
+            this.Controls.Add(this.vastaus_T5);
             this.Controls.Add(this.annaLukujaTXT_T5);
             this.Controls.Add(this.lukujenJärjTXT_T5);
             this.Controls.Add(this.T5_LB);
@@ -494,8 +482,7 @@
         private Label T5_LB;
         private Label lukujenJärjTXT_T5;
         private Label annaLukujaTXT_T5;
-        private Label luvut_T5;
+        private Label vastaus_T5;
         private TextBox textBox_T5;
-        private TextBox manualChangeTESTBox_T5;
     }
 }

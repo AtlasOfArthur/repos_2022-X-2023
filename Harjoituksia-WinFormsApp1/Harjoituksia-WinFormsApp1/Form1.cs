@@ -16,7 +16,7 @@ namespace Harjoituksia_WinFormsApp1
         private void TulostaBT_T2_Click(object sender, EventArgs e)
         {
             string teksti = TulostusTB_T2.Text; // Tallentaa k‰ytt‰j‰n syˆtteen merkkijonoksi
-            TulostettuTXT_T2.Text = teksti; //Tulostaa tekstin, koska (Visible = false)
+            TulostettuTXT_T2.Text = teksti; // Tulostaa tekstin, koska (Visible = false)
             TulostettuTXT_T2.Visible = true; // Tuo tekstin n‰kyviin 
         }
 
@@ -24,7 +24,7 @@ namespace Harjoituksia_WinFormsApp1
         {
             float luku1, luku2, vastaus;
             string merkki;
-            luku1 = float.Parse(lukuBox1.Text);
+            luku1 = float.Parse(lukuBox1.Text); // T‰ytyy parsata, koska 'lukuBox..' ottaa syˆtteen stringin‰, eli tekstin‰ vastaan, eik‰ lukuna (integer)
             luku2 = float.Parse(lukuBox2.Text);
             merkki = comboBox_T3.Text;
 
@@ -73,33 +73,38 @@ namespace Harjoituksia_WinFormsApp1
             SekunttiaLB_T4.Visible = true;
         }
 
-        //(Teht‰v‰5)T1-tason ohjelmointi: 10. Viides harjoitus: Lukujen j‰rjestys (6:57)
-        List<int> jono_T5 = new List<int>();
+        // (Teht‰v‰5)T1-tason ohjelmointi: 10. Viides harjoitus: Lukujen j‰rjestys (6:57)
+        List<int> jono_T5 = new List<int>(); // Miksi lista? ,koska taulukon koko t‰ytyy m‰‰ritell‰ ensin. (Ensin listaksi tekeminen s‰‰st‰‰ muistia)
 
-        private void textBox_T5_KeyPress(object sender, KeyPressEventArgs e)  //  Designer.cs 409
-        //Designer.cs 408 (Code)-> this.textBox_T5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_T5_KeyPress);
+        private void textBox_T5_KeyPress(object sender, KeyPressEventArgs e)  //  Designer.cs 408
+        // Designer.cs (Code)-> this.textBox_T5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_T5_KeyPress);
         /*
             VƒƒRIN!
 
         private void textBox_T5_TextChanged(object sender, EventArgs e)  
-        //Designer.cs 381 (Old) -> (Code)-> this.textBox_T5.TextChanged += new System.EventHandler(this.TextBox_T5_TextChanged);  */
-        //manuaalisesti muuttamalla tuli lis‰‰ virheit‰. muuta (Properties -> [salama symboli] -> tuplaklikkaa kohtaa KeyPress)
+        // Designer.cs 381 (Old) -> (Code)-> this.textBox_T5.TextChanged += new System.EventHandler(this.TextBox_T5_TextChanged);  */
+        // Manuaalisesti muuttamalla tuli lis‰‰ virheit‰. muuta (Properties -> [salama symboli] -> tuplaklikkaa kohtaa KeyPress)
         {
 
-            if (e.KeyChar == (char)Keys.Enter)  //KeyChar ei toimi jos private void textBox_T5_TextChanged -//-
+            if (e.KeyChar == (char)Keys.Enter)  // KeyChar ei toimi jos private void textBox_T5_TextChanged -//- ...Manuaalinen muuttaminen vaikeaa, mutta mahdollista
             {
-                if (textBox_T5.Text == "-999")
+                if (textBox_T5.Text == "-999") // Jatkaa jonoon lis‰‰mist‰ (else), kunnes (-999) lis‰t‰‰n
                 {
-
+                    vastaus_T5.Text = ""; // Tyhjent‰‰ kent‰n silt‰ varalta ett‰ siell‰ on jotain
+                    int[] arrayEliTaulukko = jono_T5.ToArray(); // Muuttaa luodun jono listan taulukoksi
+                    Array.Sort(arrayEliTaulukko); // J‰rjest‰‰ juuri luodun taulukon pienimm‰st‰ suurimpaan
+                    foreach(var nro in arrayEliTaulukko) // Ei suostu tulostamaansuoraan, joten lis‰t‰‰n foreach komennolla yksitellen
+                    {
+                        vastaus_T5.Text += nro + " "; //Lis‰t‰‰n numerot (nro) yksitellen riville + lis‰t‰‰n v‰lilyˆnti numeroiden v‰liin kohtaan vastaus_T5 ja tulostetaan
+                    }
+                    vastaus_T5.Visible = true; // Kun(-999) lis‰t‰‰n tekee tekstikent‰st‰ (textBox_T5 n‰kyv‰n)
+                }
+                else
+                {
+                    jono_T5.Add(int.Parse(textBox_T5.Text)); //lis‰‰ textikent‰ss‰ olevan luvun listaan jono_T5 entterin painalluksella (KeyPress)
+                    textBox_T5.Text = ""; // Tyhjent‰‰ tekstikent‰n
                 }
             }
-        }
-
-        private void manualChangeTESTBox_T5_KeyPress(object sender, KeyPressEventArgs e) //Designer.CS 417
-     // Muutetaan- private void manualChangeTESTBox_T5_TextChanged(object sender, EventArgs e) -manuaalisesti testi (T‰m‰ alkuper‰inen rivi)
-     // Korvataan: TextChanged, Lis‰t‰‰n: KeyPress (Form1.cs & Designer.CS, rivit 417,418)
-        {
-
         }
     }
 }
