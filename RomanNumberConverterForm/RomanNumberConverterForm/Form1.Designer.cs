@@ -64,11 +64,11 @@
             // 
             this.VastausLB.AutoSize = true;
             this.VastausLB.BackColor = System.Drawing.Color.Transparent;
-            this.VastausLB.Font = new System.Drawing.Font("Bernard MT Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.VastausLB.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.VastausLB.ForeColor = System.Drawing.Color.Gold;
-            this.VastausLB.Location = new System.Drawing.Point(43, 264);
+            this.VastausLB.Location = new System.Drawing.Point(31, 260);
             this.VastausLB.Name = "VastausLB";
-            this.VastausLB.Size = new System.Drawing.Size(85, 28);
+            this.VastausLB.Size = new System.Drawing.Size(118, 25);
             this.VastausLB.TabIndex = 2;
             this.VastausLB.Text = "Vastaus";
             this.VastausLB.Visible = false;

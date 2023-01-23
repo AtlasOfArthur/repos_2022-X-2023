@@ -11,13 +11,13 @@ namespace RomanNumberConverterForm
         {
             int tuhannet, sadat, kympit, yks;
             string vastaus = "";
-            if (NumeroTB.Text.Length > 3 )// Pidempi kuin 3, kyseessä on tuhat luku
+            if (NumeroTB.Text.Length > 3)// Pidempi kuin 3, kyseessä on tuhatluku
             {                                                              // 0 1 2 3 4 -> 0=ensimäinen numero rivissä,jne
                 tuhannet = Convert.ToInt32(NumeroTB.Text.Substring(0, 1)); // 1 0 0 0
                 sadat = Convert.ToInt32(NumeroTB.Text.Substring(1, 1));    //   1 0 0
                 kympit = Convert.ToInt32(NumeroTB.Text.Substring(2, 1));   //     1 0
                 yks = Convert.ToInt32(NumeroTB.Text.Substring(3, 1));      //       1
-                    // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_substring
+                                                                           // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_substring
 
                 if (tuhannet % 3 == 0)
                 {
@@ -27,7 +27,7 @@ namespace RomanNumberConverterForm
                 {
                     vastaus += "MM";
                 }
-                else if (tuhannet % 1 == 0) 
+                else if (tuhannet % 1 == 0)
                 {
                     vastaus += "M";
                 }
@@ -38,9 +38,32 @@ namespace RomanNumberConverterForm
                 vastaus += Sataset(sadat, vastaus);
                 vastaus += Kymmenet(kympit, vastaus);
                 vastaus += Ykkoset(yks, vastaus);
-                VastausLB.Text = vastaus;
-                VastausLB.Visible = true;
+
             }
+            else if (NumeroTB.Text.Length > 2) // kyseessä on sataluku
+            {                                                              //   0 1 2 3
+                sadat = Convert.ToInt32(NumeroTB.Text.Substring(0, 1));    //   1 0 0
+                kympit = Convert.ToInt32(NumeroTB.Text.Substring(1, 1));   //     1 0
+                yks = Convert.ToInt32(NumeroTB.Text.Substring(2, 1));      //       1
+                vastaus += Sataset(sadat, vastaus);
+                vastaus += Kymmenet(kympit, vastaus);
+                vastaus += Ykkoset(yks, vastaus);
+            }
+            else if (NumeroTB.Text.Length > 1) // kyseessä on kymmenluku
+            {                                                              //   0 1 2
+                kympit = Convert.ToInt32(NumeroTB.Text.Substring(0, 1));   //   1 0
+                yks = Convert.ToInt32(NumeroTB.Text.Substring(1, 1));      //     1
+                vastaus += Kymmenet(kympit, vastaus);
+                vastaus += Ykkoset(yks, vastaus);
+            }
+            else if (NumeroTB.Text.Length > 0) // kyseessä on ykkösluku
+            {                                                              //   0 1
+                yks = Convert.ToInt32(NumeroTB.Text.Substring(0, 1));      //   1
+                vastaus += Ykkoset(yks, vastaus);
+            }
+
+            VastausLB.Text = vastaus;
+            VastausLB.Visible = true;
         }
         private string Sataset(int sadat, string vastaus)
         {
@@ -54,7 +77,7 @@ namespace RomanNumberConverterForm
             }
             else if (sadat % 7 == 0 && sadat != 0)
             {
-                return "DCC"; 
+                return "DCC";
             }
             else if (sadat % 6 == 0 && sadat != 0)
             {
@@ -84,6 +107,7 @@ namespace RomanNumberConverterForm
             {
                 return "";
             }
+        
         }
         private string Kymmenet(int kympit, string vastaus)
         {
@@ -101,7 +125,7 @@ namespace RomanNumberConverterForm
             }
             else if (kympit % 6 == 0 && kympit != 0)
             {
-                return "LX"; 
+                return "LX";
             }
             else if (kympit % 5 == 0 && kympit != 0)
             {
@@ -172,5 +196,4 @@ namespace RomanNumberConverterForm
             }
         }
     }
-    
-}
+} 
