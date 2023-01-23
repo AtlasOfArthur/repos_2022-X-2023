@@ -12,11 +12,12 @@ namespace RomanNumberConverterForm
             int tuhannet, sadat, kympit, yks;
             string vastaus = "";
             if (NumeroTB.Text.Length > 3 )// Pidempi kuin 3, kyseessä on tuhat luku
-            {
-                tuhannet = Convert.ToInt32(NumeroTB.Text.Substring(0, 1));
-                sadat = Convert.ToInt32(NumeroTB.Text.Substring(1, 1));
-                kympit = Convert.ToInt32(NumeroTB.Text.Substring(2, 1));
-                yks = Convert.ToInt32(NumeroTB.Text.Substring(3, 1));
+            {                                                              // 0 1 2 3 4 -> 0=ensimäinen numero rivissä,jne
+                tuhannet = Convert.ToInt32(NumeroTB.Text.Substring(0, 1)); // 1 0 0 0
+                sadat = Convert.ToInt32(NumeroTB.Text.Substring(1, 1));    //   1 0 0
+                kympit = Convert.ToInt32(NumeroTB.Text.Substring(2, 1));   //     1 0
+                yks = Convert.ToInt32(NumeroTB.Text.Substring(3, 1));      //       1
+                    // https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_substring
 
                 if (tuhannet % 3 == 0)
                 {
