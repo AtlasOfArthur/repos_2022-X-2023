@@ -118,10 +118,10 @@
             // vastausLB
             // 
             this.vastausLB.AutoSize = true;
-            this.vastausLB.Font = new System.Drawing.Font("Kristen ITC", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.vastausLB.Location = new System.Drawing.Point(322, 218);
+            this.vastausLB.Font = new System.Drawing.Font("Kristen ITC", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.vastausLB.Location = new System.Drawing.Point(31, 229);
             this.vastausLB.Name = "vastausLB";
-            this.vastausLB.Size = new System.Drawing.Size(131, 39);
+            this.vastausLB.Size = new System.Drawing.Size(109, 30);
             this.vastausLB.TabIndex = 6;
             this.vastausLB.Text = "Vastaus";
             this.vastausLB.Visible = false;
