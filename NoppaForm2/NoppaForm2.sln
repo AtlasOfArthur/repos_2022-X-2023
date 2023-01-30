@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoppaForm2", "NoppaForm2\NoppaForm2.csproj", "{9EE0DF6E-301F-41ED-9D99-6AB71BCB7EA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EE0DF6E-301F-41ED-9D99-6AB71BCB7EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE0DF6E-301F-41ED-9D99-6AB71BCB7EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE0DF6E-301F-41ED-9D99-6AB71BCB7EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE0DF6E-301F-41ED-9D99-6AB71BCB7EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA2DC13-9BE1-410F-99C9-5D612E07C370}
+	EndGlobalSection
+EndGlobal
