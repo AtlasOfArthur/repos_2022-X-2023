@@ -31,11 +31,29 @@ namespace ValitseLohikäärmeForm
         
         private void NimiBT_Click(object sender, EventArgs e)
         {
+            int count = 0;
             string nimeni = NamingBox.Text;
             GreenEsittäytLB.Text = "Tervetuloa " + nimeni + "!";
             NamingBox.Visible = false;
             GreenPuheLB.Text = "Tehtäväni on auttaa sinua valitsemaan itsellesi oma lohikäärme.";
-            OkBT.Text = "Eiköhän aloiteta";
+            count++;
+
+            
+                if (count == 1)
+                {
+                    OkBT.Text = "Eiköhän aloiteta.";
+                    count+=1;
+                }
+                else if (count == 2)
+                {
+                    OkBT.Text = "Minulla on siis mistä valita.";
+                    count++;
+                }
+                else if (count == 3)
+                {
+                    OkBT.Visible = false;
+                }
+
         }
 
     }
