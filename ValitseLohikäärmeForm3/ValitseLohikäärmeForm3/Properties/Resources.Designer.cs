@@ -73,6 +73,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AmberDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("AmberDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap architecture_5544726_1280_hautomo {
             get {
                 object obj = ResourceManager.GetObject("architecture-5544726_1280 hautomo", resourceCulture);
@@ -83,9 +93,89 @@ namespace ValitseLohikäärmeForm3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlackDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("BlackDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CopperDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("CopperDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CrystalDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("CrystalDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ElectricDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("ElectricDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FireDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("FireDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GoldenDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("GoldenDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gothic_4746967_1280_frame {
             get {
                 object obj = ResourceManager.GetObject("gothic-4746967_1280 frame", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GreenDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("GreenDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IceDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("IceDragonEgg_Nest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +213,36 @@ namespace ValitseLohikäärmeForm3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap space_4152623_1280 {
+            get {
+                object obj = ResourceManager.GetObject("space-4152623_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap space_4152623_1280_RedHot {
+            get {
+                object obj = ResourceManager.GetObject("space-4152623_1280_RedHot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap space_4152623_1280_warm {
+            get {
+                object obj = ResourceManager.GetObject("space-4152623_1280_warm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tasalämpöiset_Ovi {
             get {
                 object obj = ResourceManager.GetObject("Tasalämpöiset-Ovi", resourceCulture);
@@ -136,6 +256,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         internal static System.Drawing.Bitmap Tulisielut_Ovi {
             get {
                 object obj = ResourceManager.GetObject("Tulisielut-Ovi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WaterDragonEgg_Nest {
+            get {
+                object obj = ResourceManager.GetObject("WaterDragonEgg_Nest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
