@@ -63,9 +63,99 @@ namespace ValitseLohikäärmeForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4_Ovea {
+            get {
+                object obj = ResourceManager.GetObject("4-Ovea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap architecture_5544726_1280_hautomo {
+            get {
+                object obj = ResourceManager.GetObject("architecture-5544726_1280 hautomo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kuumakallet_Ovi {
+            get {
+                object obj = ResourceManager.GetObject("Kuumakallet-Ovi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kylmäveriset_Ovi {
+            get {
+                object obj = ResourceManager.GetObject("Kylmäveriset-Ovi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap man_7752637_1280_Greens2 {
             get {
                 object obj = ResourceManager.GetObject("man-7752637_1280 Greens2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tasalämpöiset_Ovi {
+            get {
+                object obj = ResourceManager.GetObject("Tasalämpöiset-Ovi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tasalämpöiset_Ovi1 {
+            get {
+                object obj = ResourceManager.GetObject("Tasalämpöiset-Ovi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transparency {
+            get {
+                object obj = ResourceManager.GetObject("Transparency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transparency2 {
+            get {
+                object obj = ResourceManager.GetObject("Transparency2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tulisielut_Ovi {
+            get {
+                object obj = ResourceManager.GetObject("Tulisielut-Ovi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

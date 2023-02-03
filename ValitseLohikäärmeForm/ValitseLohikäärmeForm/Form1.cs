@@ -9,6 +9,7 @@ namespace ValitseLohikäärmeForm
         public HautomoPeliForm()
         {
             InitializeComponent();
+
         }
 
         private void StartBT_Click(object sender, EventArgs e) // Aloituspanelin näppäin
@@ -31,28 +32,44 @@ namespace ValitseLohikäärmeForm
         
         private void NimiBT_Click(object sender, EventArgs e)
         {
-            int count = 0;
             string nimeni = NamingBox.Text;
             GreenEsittäytLB.Text = "Tervetuloa " + nimeni + "!";
             NamingBox.Visible = false;
             GreenPuheLB.Text = "Tehtäväni on auttaa sinua valitsemaan itsellesi oma lohikäärme.";
-            count++;
+            OkBT.Visible = false;
+            EikohanMennaBT.Visible = true;
+            EikohanMennaBT.Enabled= true;
+        }
 
-            
-                if (count == 1)
-                {
-                    OkBT.Text = "Eiköhän aloiteta.";
-                    count+=1;
-                }
-                else if (count == 2)
-                {
-                    OkBT.Text = "Minulla on siis mistä valita.";
-                    count++;
-                }
-                else if (count == 3)
-                {
-                    OkBT.Visible = false;
-                }
+        private void EikohanMennaBT_Click(object sender, EventArgs e)
+        {
+            NimenvalintaPaneli.Visible = false;
+            EikohanMennaBT.Visible = false;
+            HautomoTaloPaneli.Visible = true;
+        }
+
+        private void OnValitaBT_Click(object sender, EventArgs e)
+        {
+            HautomoTaloPaneli.Visible=false;
+        }
+
+        private void BT1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT4_Click(object sender, EventArgs e)
+        {
 
         }
 

@@ -32,15 +32,23 @@
             this.AloitusLB1 = new System.Windows.Forms.Label();
             this.StartBT = new System.Windows.Forms.Button();
             this.NimenvalintaPaneli = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.OkBT = new System.Windows.Forms.Button();
+            this.EikohanMennaBT = new System.Windows.Forms.Button();
             this.NamingBox = new System.Windows.Forms.TextBox();
             this.GreenPuheLB = new System.Windows.Forms.Label();
             this.GreenEsittäytLB = new System.Windows.Forms.Label();
             this.MrGreenPB = new System.Windows.Forms.PictureBox();
+            this.HautomoTaloPaneli = new System.Windows.Forms.Panel();
+            this.OnValitaBT = new System.Windows.Forms.Button();
+            this.TassaOnHautomoLB = new System.Windows.Forms.Label();
+            this.BT1 = new System.Windows.Forms.Button();
+            this.BT2 = new System.Windows.Forms.Button();
+            this.BT4 = new System.Windows.Forms.Button();
+            this.BT3 = new System.Windows.Forms.Button();
             this.AloitusPaneli.SuspendLayout();
             this.NimenvalintaPaneli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MrGreenPB)).BeginInit();
+            this.HautomoTaloPaneli.SuspendLayout();
             this.SuspendLayout();
             // 
             // AloitusPaneli
@@ -74,15 +82,16 @@
             this.StartBT.Name = "StartBT";
             this.StartBT.Size = new System.Drawing.Size(222, 75);
             this.StartBT.TabIndex = 0;
-            this.StartBT.Text = "Astu sisään";
+            this.StartBT.Text = "Lähde matkaan";
             this.StartBT.UseVisualStyleBackColor = false;
             this.StartBT.Click += new System.EventHandler(this.StartBT_Click);
             // 
             // NimenvalintaPaneli
             // 
             this.NimenvalintaPaneli.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.NimenvalintaPaneli.Controls.Add(this.label1);
+            this.NimenvalintaPaneli.Controls.Add(this.AloitusPaneli);
             this.NimenvalintaPaneli.Controls.Add(this.OkBT);
+            this.NimenvalintaPaneli.Controls.Add(this.EikohanMennaBT);
             this.NimenvalintaPaneli.Controls.Add(this.NamingBox);
             this.NimenvalintaPaneli.Controls.Add(this.GreenPuheLB);
             this.NimenvalintaPaneli.Controls.Add(this.GreenEsittäytLB);
@@ -94,30 +103,32 @@
             this.NimenvalintaPaneli.TabIndex = 1;
             this.NimenvalintaPaneli.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(347, 132);
-            this.label1.MaximumSize = new System.Drawing.Size(420, 420);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 31);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
-            // 
             // OkBT
             // 
             this.OkBT.BackColor = System.Drawing.Color.LightSeaGreen;
             this.OkBT.Enabled = false;
             this.OkBT.Font = new System.Drawing.Font("Magneto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.OkBT.Location = new System.Drawing.Point(436, 309);
+            this.OkBT.Location = new System.Drawing.Point(436, 238);
             this.OkBT.Name = "OkBT";
-            this.OkBT.Size = new System.Drawing.Size(170, 80);
+            this.OkBT.Size = new System.Drawing.Size(170, 47);
             this.OkBT.TabIndex = 4;
             this.OkBT.Text = "OK";
             this.OkBT.UseVisualStyleBackColor = false;
             this.OkBT.Click += new System.EventHandler(this.NimiBT_Click);
+            // 
+            // EikohanMennaBT
+            // 
+            this.EikohanMennaBT.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.EikohanMennaBT.Enabled = false;
+            this.EikohanMennaBT.Font = new System.Drawing.Font("Magneto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EikohanMennaBT.Location = new System.Drawing.Point(436, 309);
+            this.EikohanMennaBT.Name = "EikohanMennaBT";
+            this.EikohanMennaBT.Size = new System.Drawing.Size(170, 80);
+            this.EikohanMennaBT.TabIndex = 5;
+            this.EikohanMennaBT.Text = "Eiköhän mennä !";
+            this.EikohanMennaBT.UseVisualStyleBackColor = false;
+            this.EikohanMennaBT.Visible = false;
+            this.EikohanMennaBT.Click += new System.EventHandler(this.EikohanMennaBT_Click);
             // 
             // NamingBox
             // 
@@ -162,13 +173,107 @@
             this.MrGreenPB.TabIndex = 0;
             this.MrGreenPB.TabStop = false;
             // 
+            // HautomoTaloPaneli
+            // 
+            this.HautomoTaloPaneli.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources.architecture_5544726_1280_hautomo;
+            this.HautomoTaloPaneli.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HautomoTaloPaneli.Controls.Add(this.NimenvalintaPaneli);
+            this.HautomoTaloPaneli.Controls.Add(this.OnValitaBT);
+            this.HautomoTaloPaneli.Controls.Add(this.TassaOnHautomoLB);
+            this.HautomoTaloPaneli.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HautomoTaloPaneli.Location = new System.Drawing.Point(0, 0);
+            this.HautomoTaloPaneli.Name = "HautomoTaloPaneli";
+            this.HautomoTaloPaneli.Size = new System.Drawing.Size(800, 450);
+            this.HautomoTaloPaneli.TabIndex = 8;
+            this.HautomoTaloPaneli.Visible = false;
+            // 
+            // OnValitaBT
+            // 
+            this.OnValitaBT.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.OnValitaBT.Enabled = false;
+            this.OnValitaBT.Font = new System.Drawing.Font("Magneto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.OnValitaBT.Location = new System.Drawing.Point(156, 368);
+            this.OnValitaBT.Name = "OnValitaBT";
+            this.OnValitaBT.Size = new System.Drawing.Size(489, 36);
+            this.OnValitaBT.TabIndex = 8;
+            this.OnValitaBT.Text = "Minulla on siis mistä valita";
+            this.OnValitaBT.UseVisualStyleBackColor = false;
+            this.OnValitaBT.Click += new System.EventHandler(this.OnValitaBT_Click);
+            // 
+            // TassaOnHautomoLB
+            // 
+            this.TassaOnHautomoLB.AutoSize = true;
+            this.TassaOnHautomoLB.BackColor = System.Drawing.Color.Transparent;
+            this.TassaOnHautomoLB.Font = new System.Drawing.Font("Magneto", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TassaOnHautomoLB.Location = new System.Drawing.Point(60, 27);
+            this.TassaOnHautomoLB.MaximumSize = new System.Drawing.Size(700, 200);
+            this.TassaOnHautomoLB.Name = "TassaOnHautomoLB";
+            this.TassaOnHautomoLB.Size = new System.Drawing.Size(692, 56);
+            this.TassaOnHautomoLB.TabIndex = 2;
+            this.TassaOnHautomoLB.Text = "Tässä on hautomo. Täällä kasvatamme jopa kymmentä erilaista lohikäärme rotua.";
+            // 
+            // BT1
+            // 
+            this.BT1.BackColor = System.Drawing.Color.Transparent;
+            this.BT1.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources.Tulisielut_Ovi;
+            this.BT1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BT1.Location = new System.Drawing.Point(41, 139);
+            this.BT1.Name = "BT1";
+            this.BT1.Size = new System.Drawing.Size(125, 197);
+            this.BT1.TabIndex = 9;
+            this.BT1.UseVisualStyleBackColor = false;
+            this.BT1.Click += new System.EventHandler(this.BT1_Click);
+            // 
+            // BT2
+            // 
+            this.BT2.BackColor = System.Drawing.Color.Transparent;
+            this.BT2.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources.Kylmäveriset_Ovi;
+            this.BT2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BT2.Location = new System.Drawing.Point(238, 139);
+            this.BT2.Name = "BT2";
+            this.BT2.Size = new System.Drawing.Size(125, 197);
+            this.BT2.TabIndex = 10;
+            this.BT2.UseVisualStyleBackColor = false;
+            this.BT2.Click += new System.EventHandler(this.BT2_Click);
+            // 
+            // BT4
+            // 
+            this.BT4.BackColor = System.Drawing.Color.Transparent;
+            this.BT4.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources.Tasalämpöiset_Ovi;
+            this.BT4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BT4.Location = new System.Drawing.Point(631, 139);
+            this.BT4.Name = "BT4";
+            this.BT4.Size = new System.Drawing.Size(125, 197);
+            this.BT4.TabIndex = 12;
+            this.BT4.UseVisualStyleBackColor = false;
+            this.BT4.Click += new System.EventHandler(this.BT4_Click);
+            // 
+            // BT3
+            // 
+            this.BT3.BackColor = System.Drawing.Color.Transparent;
+            this.BT3.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources.Kuumakallet_Ovi;
+            this.BT3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BT3.Location = new System.Drawing.Point(435, 139);
+            this.BT3.Name = "BT3";
+            this.BT3.Size = new System.Drawing.Size(125, 197);
+            this.BT3.TabIndex = 11;
+            this.BT3.UseVisualStyleBackColor = false;
+            this.BT3.Click += new System.EventHandler(this.BT3_Click);
+            // 
             // HautomoPeliForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ValitseLohikäärmeForm.Properties.Resources._4_Ovea;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.NimenvalintaPaneli);
-            this.Controls.Add(this.AloitusPaneli);
+            this.Controls.Add(this.HautomoTaloPaneli);
+            this.Controls.Add(this.BT4);
+            this.Controls.Add(this.BT3);
+            this.Controls.Add(this.BT2);
+            this.Controls.Add(this.BT1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HautomoPeliForm";
             this.Text = "Hautomo peli";
             this.AloitusPaneli.ResumeLayout(false);
@@ -176,6 +281,8 @@
             this.NimenvalintaPaneli.ResumeLayout(false);
             this.NimenvalintaPaneli.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MrGreenPB)).EndInit();
+            this.HautomoTaloPaneli.ResumeLayout(false);
+            this.HautomoTaloPaneli.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -191,6 +298,13 @@
         private Label GreenPuheLB;
         private Label GreenEsittäytLB;
         private PictureBox MrGreenPB;
-        private Label label1;
+        private Panel HautomoTaloPaneli;
+        private Button OnValitaBT;
+        private Label TassaOnHautomoLB;
+        private Button EikohanMennaBT;
+        private Button BT1;
+        private Button BT2;
+        private Button BT4;
+        private Button BT3;
     }
 }
