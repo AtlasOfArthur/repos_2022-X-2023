@@ -118,13 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Kuumakallet-Ovi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kuumakallet-Ovi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="man-7752637_1280 Greens2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\man-7752637_1280 Greens2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4-Ovea&amp;WoodFloor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4-Ovea&amp;WoodFloor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="architecture-5544726_1280 hautomo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\architecture-5544726_1280 hautomo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tulisielut-Ovi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tulisielut-Ovi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kylmäveriset-Ovi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kylmäveriset-Ovi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gothic-4746967_1280 frame" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gothic-4746967_1280 frame.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="architecture-5544726_1280 hautomo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\architecture-5544726_1280 hautomo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tasalämpöiset-Ovi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tasalämpöiset-Ovi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

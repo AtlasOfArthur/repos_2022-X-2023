@@ -72,7 +72,7 @@ namespace ValitseLohikäärmeForm3
         {
             nimeni = NameBox.Text;
             NameBox.Visible = false;
-            BradGreensLB.Text = "Tervetuloa " + nimeni + "! \n \n Tehtäväni on auttaa sinua valitsemaan itsellesi oma lohikäärme.";
+            BradGreensLB.Text = "Tervetuloa " + nimeni + "! \n \nTehtäväni on auttaa sinua \nvalitsemaan itsellesi oma lohikäärme.";
          //   OkBT.Text = "Eiköhän mennä!";
          //   OkBT.Size = new Size(300, 50);
          //   OkBT.Location = new Point(528, 316);
@@ -87,7 +87,54 @@ namespace ValitseLohikäärmeForm3
         private void mennaBT_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
-            panel2.BringToFront();
+            panel2.BringToFront(); //Tähän mennessä kaikki toimii
+
+        }
+
+        private void AstuSisäänBT_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+            panel3.BringToFront();
+        }
+
+        private void TuliOviBT_Click(object sender, EventArgs e)
+        {
+            TuliPanel.Visible = true;
+        }
+
+        private void KylmaOviBT_Click(object sender, EventArgs e)
+        {
+            kylmaPanel.Visible = true;
+        }
+
+        private void KuumaOviBT_Click(object sender, EventArgs e)
+        {
+            KuumaPanel.Visible = true;
+        }
+
+        private void TasaOviBT_Click(object sender, EventArgs e)
+        {
+            TasaPanel.Visible = true;
+        }
+
+        private void PalaaBT1_Click(object sender, EventArgs e)
+        {
+            TuliPanel.Visible = false;
+        }
+
+        private void PalaaBT2_Click(object sender, EventArgs e)
+        {
+            kylmaPanel.Visible = false;
+        }
+
+        private void PalaaBT3_Click(object sender, EventArgs e)
+        {
+            KuumaPanel.Visible = false;
+        }
+
+        private void PalaaBT4_Click(object sender, EventArgs e)
+        {
+            TasaPanel.Visible = false;
         }
     }
 }
