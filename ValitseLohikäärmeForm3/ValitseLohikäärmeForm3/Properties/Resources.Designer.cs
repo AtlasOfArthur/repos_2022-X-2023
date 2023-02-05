@@ -183,6 +183,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Kehys1_Horizontal {
+            get {
+                object obj = ResourceManager.GetObject("Kehys1-Horizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kuumakallet_Ovi {
             get {
                 object obj = ResourceManager.GetObject("Kuumakallet-Ovi", resourceCulture);
@@ -196,6 +206,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         internal static System.Drawing.Bitmap Kylmäveriset_Ovi {
             get {
                 object obj = ResourceManager.GetObject("Kylmäveriset-Ovi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lobby2 {
+            get {
+                object obj = ResourceManager.GetObject("Lobby2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

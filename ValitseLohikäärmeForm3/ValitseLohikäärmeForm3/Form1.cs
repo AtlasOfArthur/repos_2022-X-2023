@@ -136,5 +136,63 @@ namespace ValitseLohikäärmeForm3
         {
             TasaPanel.Visible = false;
         }
+
+        private void pictureBoxHydroEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxArctikEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxBlackEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxGoldenEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxElectraEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxGreenEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxCopperEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxKristalliEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxAmberEgg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxEmberEgg_Click(object sender, EventArgs e)
+        {
+            AmberPanel.Visible = true;
+            AmberPanel.BringToFront();
+        }
+
+        private void EmberPoistuBT_Click(object sender, EventArgs e)
+        {
+            AmberPanel.Visible = false;
+            TuliPanel.BringToFront();
+            AmberPanel.SendToBack();
+        }
     }
 }
