@@ -43,29 +43,33 @@
             this.AstuSisäänBT = new System.Windows.Forms.Button();
             this.HautomoLB = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.TuliPanel = new System.Windows.Forms.Panel();
             this.AmberPanel = new System.Windows.Forms.Panel();
-            this.AmberEnRB = new System.Windows.Forms.RadioButton();
-            this.AmberHaastavaRB = new System.Windows.Forms.RadioButton();
-            this.AmberVaativaRB = new System.Windows.Forms.RadioButton();
-            this.AmberKeskiRB = new System.Windows.Forms.RadioButton();
-            this.AmberHelpohkoRB = new System.Windows.Forms.RadioButton();
-            this.AmberHelppoRB = new System.Windows.Forms.RadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.kylmaPanel = new System.Windows.Forms.Panel();
             this.KuumaPanel = new System.Windows.Forms.Panel();
             this.TasaPanel = new System.Windows.Forms.Panel();
+            this.KIRJA = new System.Windows.Forms.Panel();
+            this.TulosEmerald = new System.Windows.Forms.Label();
+            this.TulosOil = new System.Windows.Forms.Label();
+            this.TulosArctic = new System.Windows.Forms.Label();
+            this.TulosHydro = new System.Windows.Forms.Label();
+            this.TulosCopper = new System.Windows.Forms.Label();
+            this.TulosElectra = new System.Windows.Forms.Label();
+            this.TulosRoyal = new System.Windows.Forms.Label();
+            this.TulosAmber = new System.Windows.Forms.Label();
+            this.TulosCrystal = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.TulosEmber = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -107,6 +111,12 @@
             this.pictureBoxHydroEgg = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.PalaaBT2 = new System.Windows.Forms.Button();
+            this.AmberEnRB = new System.Windows.Forms.RadioButton();
+            this.AmberHaastavaRB = new System.Windows.Forms.RadioButton();
+            this.AmberVaativaRB = new System.Windows.Forms.RadioButton();
+            this.AmberKeskiRB = new System.Windows.Forms.RadioButton();
+            this.AmberHelpohkoRB = new System.Windows.Forms.RadioButton();
+            this.AmberHelppoRB = new System.Windows.Forms.RadioButton();
             this.AmberPoistuBT = new System.Windows.Forms.Button();
             this.AmberQuestion1LB = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -132,9 +142,11 @@
             this.panel3.SuspendLayout();
             this.TuliPanel.SuspendLayout();
             this.AmberPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.kylmaPanel.SuspendLayout();
             this.KuumaPanel.SuspendLayout();
             this.TasaPanel.SuspendLayout();
+            this.KIRJA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElectraEgg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreenEgg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopperEgg)).BeginInit();
@@ -189,7 +201,7 @@
             this.panel1.Controls.Add(this.BradGreensLB);
             this.panel1.Controls.Add(this.pictureBoxBradGreens1);
             this.panel1.Controls.Add(this.OkBT);
-            this.panel1.Location = new System.Drawing.Point(912, 554);
+            this.panel1.Location = new System.Drawing.Point(940, 559);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 600);
             this.panel1.TabIndex = 2;
@@ -259,7 +271,7 @@
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.AstuSisäänBT);
             this.panel2.Controls.Add(this.HautomoLB);
-            this.panel2.Location = new System.Drawing.Point(897, 559);
+            this.panel2.Location = new System.Drawing.Point(971, 579);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1000, 600);
             this.panel2.TabIndex = 5;
@@ -295,18 +307,6 @@
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Lobby2;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Controls.Add(this.label25);
-            this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.label27);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.TuliPanel);
             this.panel3.Controls.Add(this.TasaOviBT);
             this.panel3.Controls.Add(this.KuumaOviBT);
@@ -318,126 +318,6 @@
             this.panel3.Size = new System.Drawing.Size(1000, 600);
             this.panel3.TabIndex = 2;
             this.panel3.Visible = false;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label24.Location = new System.Drawing.Point(782, 67);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(58, 20);
-            this.label24.TabIndex = 16;
-            this.label24.Text = "label24";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label25.Location = new System.Drawing.Point(782, 27);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(58, 20);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "label25";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label26.Location = new System.Drawing.Point(655, 67);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(58, 20);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "label26";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label27.Location = new System.Drawing.Point(655, 27);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(58, 20);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "label27";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label20.Location = new System.Drawing.Point(526, 67);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(58, 20);
-            this.label20.TabIndex = 12;
-            this.label20.Text = "label20";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label21.Location = new System.Drawing.Point(526, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(58, 20);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "label21";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label22.Location = new System.Drawing.Point(415, 67);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 20);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "label22";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label23.Location = new System.Drawing.Point(415, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(58, 20);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "label23";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label18.Location = new System.Drawing.Point(317, 67);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 20);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "label18";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label19.Location = new System.Drawing.Point(317, 27);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 20);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "label19";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label17.Location = new System.Drawing.Point(190, 67);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 20);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "label17";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label16.Location = new System.Drawing.Point(190, 27);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 20);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "label16";
             // 
             // TuliPanel
             // 
@@ -457,7 +337,7 @@
             this.TuliPanel.Controls.Add(this.pictureBoxAmberEgg);
             this.TuliPanel.Controls.Add(this.pictureBoxEmberEgg);
             this.TuliPanel.Controls.Add(this.PalaaBT1);
-            this.TuliPanel.Location = new System.Drawing.Point(940, 566);
+            this.TuliPanel.Location = new System.Drawing.Point(0, 0);
             this.TuliPanel.Name = "TuliPanel";
             this.TuliPanel.Size = new System.Drawing.Size(1000, 600);
             this.TuliPanel.TabIndex = 4;
@@ -467,100 +347,32 @@
             // 
             this.AmberPanel.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.space_4152623_1280_RedHot;
             this.AmberPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AmberPanel.Controls.Add(this.pictureBox2);
+            this.AmberPanel.Controls.Add(this.kylmaPanel);
             this.AmberPanel.Controls.Add(this.AmberEnRB);
             this.AmberPanel.Controls.Add(this.AmberHaastavaRB);
             this.AmberPanel.Controls.Add(this.AmberVaativaRB);
             this.AmberPanel.Controls.Add(this.AmberKeskiRB);
             this.AmberPanel.Controls.Add(this.AmberHelpohkoRB);
             this.AmberPanel.Controls.Add(this.AmberHelppoRB);
-            this.AmberPanel.Controls.Add(this.kylmaPanel);
             this.AmberPanel.Controls.Add(this.AmberPoistuBT);
             this.AmberPanel.Controls.Add(this.AmberQuestion1LB);
             this.AmberPanel.Controls.Add(this.pictureBox1);
-            this.AmberPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AmberPanel.Location = new System.Drawing.Point(0, 0);
+            this.AmberPanel.Location = new System.Drawing.Point(160, 82);
             this.AmberPanel.Name = "AmberPanel";
             this.AmberPanel.Size = new System.Drawing.Size(1000, 600);
             this.AmberPanel.TabIndex = 17;
             this.AmberPanel.Visible = false;
             // 
-            // AmberEnRB
+            // pictureBox2
             // 
-            this.AmberEnRB.AutoSize = true;
-            this.AmberEnRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberEnRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberEnRB.Location = new System.Drawing.Point(561, 549);
-            this.AmberEnRB.Name = "AmberEnRB";
-            this.AmberEnRB.Size = new System.Drawing.Size(359, 26);
-            this.AmberEnRB.TabIndex = 11;
-            this.AmberEnRB.TabStop = true;
-            this.AmberEnRB.Text = "En tahdo tehdä päätöstä tähän perustuen";
-            this.AmberEnRB.UseVisualStyleBackColor = true;
-            // 
-            // AmberHaastavaRB
-            // 
-            this.AmberHaastavaRB.AutoSize = true;
-            this.AmberHaastavaRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberHaastavaRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberHaastavaRB.Location = new System.Drawing.Point(561, 480);
-            this.AmberHaastavaRB.Name = "AmberHaastavaRB";
-            this.AmberHaastavaRB.Size = new System.Drawing.Size(379, 48);
-            this.AmberHaastavaRB.TabIndex = 10;
-            this.AmberHaastavaRB.TabStop = true;
-            this.AmberHaastavaRB.Text = "Voit kutsua minua lohikäärmekuiskaajaksi. \nOtan haasteen vastaan!";
-            this.AmberHaastavaRB.UseVisualStyleBackColor = true;
-            // 
-            // AmberVaativaRB
-            // 
-            this.AmberVaativaRB.AutoSize = true;
-            this.AmberVaativaRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberVaativaRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberVaativaRB.Location = new System.Drawing.Point(561, 434);
-            this.AmberVaativaRB.Name = "AmberVaativaRB";
-            this.AmberVaativaRB.Size = new System.Drawing.Size(401, 26);
-            this.AmberVaativaRB.TabIndex = 9;
-            this.AmberVaativaRB.TabStop = true;
-            this.AmberVaativaRB.Text = "Saa olla vaativakin. Minulla on kärsivällisyyttä!";
-            this.AmberVaativaRB.UseVisualStyleBackColor = true;
-            // 
-            // AmberKeskiRB
-            // 
-            this.AmberKeskiRB.AutoSize = true;
-            this.AmberKeskiRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberKeskiRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberKeskiRB.Location = new System.Drawing.Point(41, 521);
-            this.AmberKeskiRB.Name = "AmberKeskiRB";
-            this.AmberKeskiRB.Size = new System.Drawing.Size(337, 48);
-            this.AmberKeskiRB.TabIndex = 8;
-            this.AmberKeskiRB.TabStop = true;
-            this.AmberKeskiRB.Text = "Minulla on jonkin verran kokemusta. \nKeskitasoinen, mutta ei vaativampi";
-            this.AmberKeskiRB.UseVisualStyleBackColor = true;
-            // 
-            // AmberHelpohkoRB
-            // 
-            this.AmberHelpohkoRB.AutoSize = true;
-            this.AmberHelpohkoRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberHelpohkoRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberHelpohkoRB.Location = new System.Drawing.Point(41, 480);
-            this.AmberHelpohkoRB.Name = "AmberHelpohkoRB";
-            this.AmberHelpohkoRB.Size = new System.Drawing.Size(478, 26);
-            this.AmberHelpohkoRB.TabIndex = 7;
-            this.AmberHelpohkoRB.TabStop = true;
-            this.AmberHelpohkoRB.Text = "Olen vielä epävarma kouluttajana. Helppo tai helpohko.";
-            this.AmberHelpohkoRB.UseVisualStyleBackColor = true;
-            // 
-            // AmberHelppoRB
-            // 
-            this.AmberHelppoRB.AutoSize = true;
-            this.AmberHelppoRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AmberHelppoRB.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.AmberHelppoRB.Location = new System.Drawing.Point(41, 434);
-            this.AmberHelppoRB.Name = "AmberHelppoRB";
-            this.AmberHelppoRB.Size = new System.Drawing.Size(395, 26);
-            this.AmberHelppoRB.TabIndex = 6;
-            this.AmberHelppoRB.TabStop = true;
-            this.AmberHelppoRB.Text = "Haluan helposti koulutettavan lohikäärmeen.";
-            this.AmberHelppoRB.UseVisualStyleBackColor = true;
+            this.pictureBox2.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Amberkuva;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(243, 35);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(534, 316);
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
             // 
             // kylmaPanel
             // 
@@ -580,7 +392,7 @@
             this.kylmaPanel.Controls.Add(this.pictureBoxHydroEgg);
             this.kylmaPanel.Controls.Add(this.label10);
             this.kylmaPanel.Controls.Add(this.PalaaBT2);
-            this.kylmaPanel.Location = new System.Drawing.Point(951, 569);
+            this.kylmaPanel.Location = new System.Drawing.Point(973, 568);
             this.kylmaPanel.Name = "kylmaPanel";
             this.kylmaPanel.Size = new System.Drawing.Size(1000, 600);
             this.kylmaPanel.TabIndex = 5;
@@ -607,7 +419,7 @@
             this.KuumaPanel.Controls.Add(this.pictureBoxBlackEgg);
             this.KuumaPanel.Controls.Add(this.pictureBoxGoldenEgg);
             this.KuumaPanel.Controls.Add(this.PalaaBT3);
-            this.KuumaPanel.Location = new System.Drawing.Point(897, 559);
+            this.KuumaPanel.Location = new System.Drawing.Point(963, 559);
             this.KuumaPanel.Name = "KuumaPanel";
             this.KuumaPanel.Size = new System.Drawing.Size(1000, 600);
             this.KuumaPanel.TabIndex = 6;
@@ -618,6 +430,7 @@
             this.TasaPanel.BackColor = System.Drawing.Color.Transparent;
             this.TasaPanel.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.space_4152623_1280_warm;
             this.TasaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TasaPanel.Controls.Add(this.KIRJA);
             this.TasaPanel.Controls.Add(this.panel2);
             this.TasaPanel.Controls.Add(this.label5);
             this.TasaPanel.Controls.Add(this.label4);
@@ -633,11 +446,251 @@
             this.TasaPanel.Controls.Add(this.pictureBoxGreenEgg);
             this.TasaPanel.Controls.Add(this.pictureBoxCopperEgg);
             this.TasaPanel.Controls.Add(this.PalaaBT4);
-            this.TasaPanel.Location = new System.Drawing.Point(912, 569);
+            this.TasaPanel.Location = new System.Drawing.Point(964, 571);
             this.TasaPanel.Name = "TasaPanel";
             this.TasaPanel.Size = new System.Drawing.Size(1000, 600);
             this.TasaPanel.TabIndex = 7;
             this.TasaPanel.Visible = false;
+            // 
+            // KIRJA
+            // 
+            this.KIRJA.BackColor = System.Drawing.Color.Transparent;
+            this.KIRJA.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Kirja;
+            this.KIRJA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.KIRJA.Controls.Add(this.TulosEmerald);
+            this.KIRJA.Controls.Add(this.TulosOil);
+            this.KIRJA.Controls.Add(this.TulosArctic);
+            this.KIRJA.Controls.Add(this.TulosHydro);
+            this.KIRJA.Controls.Add(this.TulosCopper);
+            this.KIRJA.Controls.Add(this.TulosElectra);
+            this.KIRJA.Controls.Add(this.TulosRoyal);
+            this.KIRJA.Controls.Add(this.TulosAmber);
+            this.KIRJA.Controls.Add(this.TulosCrystal);
+            this.KIRJA.Controls.Add(this.label16);
+            this.KIRJA.Controls.Add(this.TulosEmber);
+            this.KIRJA.Controls.Add(this.label25);
+            this.KIRJA.Controls.Add(this.label24);
+            this.KIRJA.Controls.Add(this.label17);
+            this.KIRJA.Controls.Add(this.label18);
+            this.KIRJA.Controls.Add(this.label19);
+            this.KIRJA.Controls.Add(this.label20);
+            this.KIRJA.Controls.Add(this.label23);
+            this.KIRJA.Controls.Add(this.label22);
+            this.KIRJA.Controls.Add(this.label21);
+            this.KIRJA.Location = new System.Drawing.Point(974, 579);
+            this.KIRJA.Name = "KIRJA";
+            this.KIRJA.Size = new System.Drawing.Size(468, 270);
+            this.KIRJA.TabIndex = 17;
+            // 
+            // TulosEmerald
+            // 
+            this.TulosEmerald.AutoSize = true;
+            this.TulosEmerald.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosEmerald.Location = new System.Drawing.Point(341, 161);
+            this.TulosEmerald.Name = "TulosEmerald";
+            this.TulosEmerald.Size = new System.Drawing.Size(16, 20);
+            this.TulosEmerald.TabIndex = 19;
+            this.TulosEmerald.Text = "x";
+            // 
+            // TulosOil
+            // 
+            this.TulosOil.AutoSize = true;
+            this.TulosOil.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosOil.Location = new System.Drawing.Point(341, 200);
+            this.TulosOil.Name = "TulosOil";
+            this.TulosOil.Size = new System.Drawing.Size(16, 20);
+            this.TulosOil.TabIndex = 14;
+            this.TulosOil.Text = "x";
+            // 
+            // TulosArctic
+            // 
+            this.TulosArctic.AutoSize = true;
+            this.TulosArctic.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosArctic.Location = new System.Drawing.Point(341, 44);
+            this.TulosArctic.Name = "TulosArctic";
+            this.TulosArctic.Size = new System.Drawing.Size(16, 20);
+            this.TulosArctic.TabIndex = 20;
+            this.TulosArctic.Text = "x";
+            // 
+            // TulosHydro
+            // 
+            this.TulosHydro.AutoSize = true;
+            this.TulosHydro.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosHydro.Location = new System.Drawing.Point(341, 83);
+            this.TulosHydro.Name = "TulosHydro";
+            this.TulosHydro.Size = new System.Drawing.Size(16, 20);
+            this.TulosHydro.TabIndex = 18;
+            this.TulosHydro.Text = "x";
+            // 
+            // TulosCopper
+            // 
+            this.TulosCopper.AutoSize = true;
+            this.TulosCopper.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosCopper.Location = new System.Drawing.Point(160, 203);
+            this.TulosCopper.Name = "TulosCopper";
+            this.TulosCopper.Size = new System.Drawing.Size(16, 20);
+            this.TulosCopper.TabIndex = 21;
+            this.TulosCopper.Text = "x";
+            // 
+            // TulosElectra
+            // 
+            this.TulosElectra.AutoSize = true;
+            this.TulosElectra.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosElectra.Location = new System.Drawing.Point(341, 125);
+            this.TulosElectra.Name = "TulosElectra";
+            this.TulosElectra.Size = new System.Drawing.Size(16, 20);
+            this.TulosElectra.TabIndex = 13;
+            this.TulosElectra.Text = "x";
+            // 
+            // TulosRoyal
+            // 
+            this.TulosRoyal.AutoSize = true;
+            this.TulosRoyal.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosRoyal.Location = new System.Drawing.Point(160, 164);
+            this.TulosRoyal.Name = "TulosRoyal";
+            this.TulosRoyal.Size = new System.Drawing.Size(16, 20);
+            this.TulosRoyal.TabIndex = 23;
+            this.TulosRoyal.Text = "x";
+            // 
+            // TulosAmber
+            // 
+            this.TulosAmber.AutoSize = true;
+            this.TulosAmber.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosAmber.Location = new System.Drawing.Point(160, 83);
+            this.TulosAmber.Name = "TulosAmber";
+            this.TulosAmber.Size = new System.Drawing.Size(16, 20);
+            this.TulosAmber.TabIndex = 25;
+            this.TulosAmber.Text = "x";
+            // 
+            // TulosCrystal
+            // 
+            this.TulosCrystal.AutoSize = true;
+            this.TulosCrystal.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosCrystal.Location = new System.Drawing.Point(160, 122);
+            this.TulosCrystal.Name = "TulosCrystal";
+            this.TulosCrystal.Size = new System.Drawing.Size(16, 20);
+            this.TulosCrystal.TabIndex = 22;
+            this.TulosCrystal.Text = "x";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(70, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 25);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Ember";
+            // 
+            // TulosEmber
+            // 
+            this.TulosEmber.AutoSize = true;
+            this.TulosEmber.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TulosEmber.Location = new System.Drawing.Point(160, 44);
+            this.TulosEmber.Name = "TulosEmber";
+            this.TulosEmber.Size = new System.Drawing.Size(16, 20);
+            this.TulosEmber.TabIndex = 24;
+            this.TulosEmber.Text = "x";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label25.Location = new System.Drawing.Point(254, 198);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(33, 25);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Oil";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label24.Location = new System.Drawing.Point(254, 159);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 25);
+            this.label24.TabIndex = 16;
+            this.label24.Text = "Emerald";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label17.Location = new System.Drawing.Point(70, 81);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 25);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Amber";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label18.Location = new System.Drawing.Point(70, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 25);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Crystal";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label19.Location = new System.Drawing.Point(70, 159);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(52, 25);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Royal";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label20.Location = new System.Drawing.Point(70, 198);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(58, 25);
+            this.label20.TabIndex = 12;
+            this.label20.Text = "Copper";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label23.Location = new System.Drawing.Point(254, 120);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 25);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Electra";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label22.Location = new System.Drawing.Point(254, 81);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(53, 25);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Hydro";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Brush Script MT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label21.Location = new System.Drawing.Point(254, 42);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 25);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Arctic";
             // 
             // label5
             // 
@@ -1140,14 +1193,100 @@
             this.PalaaBT2.UseVisualStyleBackColor = true;
             this.PalaaBT2.Click += new System.EventHandler(this.PalaaBT2_Click);
             // 
+            // AmberEnRB
+            // 
+            this.AmberEnRB.AutoSize = true;
+            this.AmberEnRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberEnRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberEnRB.Location = new System.Drawing.Point(561, 549);
+            this.AmberEnRB.Name = "AmberEnRB";
+            this.AmberEnRB.Size = new System.Drawing.Size(359, 26);
+            this.AmberEnRB.TabIndex = 11;
+            this.AmberEnRB.TabStop = true;
+            this.AmberEnRB.Text = "En tahdo tehdä päätöstä tähän perustuen";
+            this.AmberEnRB.UseVisualStyleBackColor = true;
+            this.AmberEnRB.Click += new System.EventHandler(this.AmberEnRB_Click);
+            // 
+            // AmberHaastavaRB
+            // 
+            this.AmberHaastavaRB.AutoSize = true;
+            this.AmberHaastavaRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberHaastavaRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberHaastavaRB.Location = new System.Drawing.Point(561, 480);
+            this.AmberHaastavaRB.Name = "AmberHaastavaRB";
+            this.AmberHaastavaRB.Size = new System.Drawing.Size(379, 48);
+            this.AmberHaastavaRB.TabIndex = 10;
+            this.AmberHaastavaRB.TabStop = true;
+            this.AmberHaastavaRB.Text = "Voit kutsua minua lohikäärmekuiskaajaksi. \nOtan haasteen vastaan!";
+            this.AmberHaastavaRB.UseVisualStyleBackColor = true;
+            this.AmberHaastavaRB.Click += new System.EventHandler(this.AmberHaastavaRB_Click);
+            // 
+            // AmberVaativaRB
+            // 
+            this.AmberVaativaRB.AutoSize = true;
+            this.AmberVaativaRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberVaativaRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberVaativaRB.Location = new System.Drawing.Point(561, 434);
+            this.AmberVaativaRB.Name = "AmberVaativaRB";
+            this.AmberVaativaRB.Size = new System.Drawing.Size(401, 26);
+            this.AmberVaativaRB.TabIndex = 9;
+            this.AmberVaativaRB.TabStop = true;
+            this.AmberVaativaRB.Text = "Saa olla vaativakin. Minulla on kärsivällisyyttä!";
+            this.AmberVaativaRB.UseVisualStyleBackColor = true;
+            this.AmberVaativaRB.Click += new System.EventHandler(this.AmberVaativaRB_Click);
+            // 
+            // AmberKeskiRB
+            // 
+            this.AmberKeskiRB.AutoSize = true;
+            this.AmberKeskiRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberKeskiRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberKeskiRB.Location = new System.Drawing.Point(41, 521);
+            this.AmberKeskiRB.Name = "AmberKeskiRB";
+            this.AmberKeskiRB.Size = new System.Drawing.Size(337, 48);
+            this.AmberKeskiRB.TabIndex = 8;
+            this.AmberKeskiRB.TabStop = true;
+            this.AmberKeskiRB.Text = "Minulla on jonkin verran kokemusta. \nKeskitasoinen, mutta ei vaativampi";
+            this.AmberKeskiRB.UseVisualStyleBackColor = true;
+            this.AmberKeskiRB.Click += new System.EventHandler(this.AmberKeskiRB_Click);
+            // 
+            // AmberHelpohkoRB
+            // 
+            this.AmberHelpohkoRB.AutoSize = true;
+            this.AmberHelpohkoRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberHelpohkoRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberHelpohkoRB.Location = new System.Drawing.Point(41, 480);
+            this.AmberHelpohkoRB.Name = "AmberHelpohkoRB";
+            this.AmberHelpohkoRB.Size = new System.Drawing.Size(478, 26);
+            this.AmberHelpohkoRB.TabIndex = 7;
+            this.AmberHelpohkoRB.TabStop = true;
+            this.AmberHelpohkoRB.Text = "Olen vielä epävarma kouluttajana. Helppo tai helpohko.";
+            this.AmberHelpohkoRB.UseVisualStyleBackColor = true;
+            this.AmberHelpohkoRB.Click += new System.EventHandler(this.AmberHelpohkoRB_Click);
+            // 
+            // AmberHelppoRB
+            // 
+            this.AmberHelppoRB.AutoSize = true;
+            this.AmberHelppoRB.Font = new System.Drawing.Font("Tempus Sans ITC", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AmberHelppoRB.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.AmberHelppoRB.Location = new System.Drawing.Point(41, 434);
+            this.AmberHelppoRB.Name = "AmberHelppoRB";
+            this.AmberHelppoRB.Size = new System.Drawing.Size(395, 26);
+            this.AmberHelppoRB.TabIndex = 6;
+            this.AmberHelppoRB.TabStop = true;
+            this.AmberHelppoRB.Text = "Haluan helposti koulutettavan lohikäärmeen.";
+            this.AmberHelppoRB.UseVisualStyleBackColor = true;
+            this.AmberHelppoRB.CheckedChanged += new System.EventHandler(this.AmberHelppoRB_CheckedChanged);
+            // 
             // AmberPoistuBT
             // 
+            this.AmberPoistuBT.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.AmberPoistuBT.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AmberPoistuBT.Location = new System.Drawing.Point(890, 12);
             this.AmberPoistuBT.Name = "AmberPoistuBT";
             this.AmberPoistuBT.Size = new System.Drawing.Size(94, 29);
             this.AmberPoistuBT.TabIndex = 2;
             this.AmberPoistuBT.Text = "Poistu";
-            this.AmberPoistuBT.UseVisualStyleBackColor = true;
+            this.AmberPoistuBT.UseVisualStyleBackColor = false;
             this.AmberPoistuBT.Click += new System.EventHandler(this.EmberPoistuBT_Click);
             // 
             // AmberQuestion1LB
@@ -1324,9 +1463,9 @@
             // 
             this.TasaOviBT.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Tasalämpöiset_Ovi;
             this.TasaOviBT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TasaOviBT.Location = new System.Drawing.Point(782, 185);
+            this.TasaOviBT.Location = new System.Drawing.Point(940, 304);
             this.TasaOviBT.Name = "TasaOviBT";
-            this.TasaOviBT.Size = new System.Drawing.Size(168, 264);
+            this.TasaOviBT.Size = new System.Drawing.Size(45, 47);
             this.TasaOviBT.TabIndex = 3;
             this.TasaOviBT.UseVisualStyleBackColor = true;
             this.TasaOviBT.Click += new System.EventHandler(this.TasaOviBT_Click);
@@ -1335,9 +1474,9 @@
             // 
             this.KuumaOviBT.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Kuumakallet_Ovi;
             this.KuumaOviBT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.KuumaOviBT.Location = new System.Drawing.Point(537, 185);
+            this.KuumaOviBT.Location = new System.Drawing.Point(170, 203);
             this.KuumaOviBT.Name = "KuumaOviBT";
-            this.KuumaOviBT.Size = new System.Drawing.Size(168, 264);
+            this.KuumaOviBT.Size = new System.Drawing.Size(38, 39);
             this.KuumaOviBT.TabIndex = 2;
             this.KuumaOviBT.UseVisualStyleBackColor = true;
             this.KuumaOviBT.Click += new System.EventHandler(this.KuumaOviBT_Click);
@@ -1346,9 +1485,9 @@
             // 
             this.KylmaOviBT.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Kylmäveriset_Ovi;
             this.KylmaOviBT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.KylmaOviBT.Location = new System.Drawing.Point(292, 185);
+            this.KylmaOviBT.Location = new System.Drawing.Point(810, 210);
             this.KylmaOviBT.Name = "KylmaOviBT";
-            this.KylmaOviBT.Size = new System.Drawing.Size(168, 264);
+            this.KylmaOviBT.Size = new System.Drawing.Size(35, 46);
             this.KylmaOviBT.TabIndex = 1;
             this.KylmaOviBT.UseVisualStyleBackColor = true;
             this.KylmaOviBT.Click += new System.EventHandler(this.KylmaOviBT_Click);
@@ -1357,9 +1496,9 @@
             // 
             this.TuliOviBT.BackgroundImage = global::ValitseLohikäärmeForm3.Properties.Resources.Tulisielut_Ovi;
             this.TuliOviBT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TuliOviBT.Location = new System.Drawing.Point(44, 185);
+            this.TuliOviBT.Location = new System.Drawing.Point(67, 281);
             this.TuliOviBT.Name = "TuliOviBT";
-            this.TuliOviBT.Size = new System.Drawing.Size(168, 264);
+            this.TuliOviBT.Size = new System.Drawing.Size(46, 48);
             this.TuliOviBT.TabIndex = 0;
             this.TuliOviBT.UseVisualStyleBackColor = true;
             this.TuliOviBT.Click += new System.EventHandler(this.TuliOviBT_Click);
@@ -1386,17 +1525,19 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.TuliPanel.ResumeLayout(false);
             this.TuliPanel.PerformLayout();
             this.AmberPanel.ResumeLayout(false);
             this.AmberPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.kylmaPanel.ResumeLayout(false);
             this.kylmaPanel.PerformLayout();
             this.KuumaPanel.ResumeLayout(false);
             this.KuumaPanel.PerformLayout();
             this.TasaPanel.ResumeLayout(false);
             this.TasaPanel.PerformLayout();
+            this.KIRJA.ResumeLayout(false);
+            this.KIRJA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxElectraEgg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreenEgg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCopperEgg)).EndInit();
@@ -1501,8 +1642,8 @@
         private RadioButton AmberHelppoRB;
         private Label label24;
         private Label label25;
-        private Label label26;
-        private Label label27;
+        private Label TulosOil;
+        private Label TulosElectra;
         private Label label20;
         private Label label21;
         private Label label22;
@@ -1511,5 +1652,15 @@
         private Label label19;
         private Label label17;
         private Label label16;
+        private Panel KIRJA;
+        private Label TulosEmerald;
+        private Label TulosArctic;
+        private Label TulosHydro;
+        private Label TulosCopper;
+        private Label TulosRoyal;
+        private Label TulosAmber;
+        private Label TulosCrystal;
+        private Label TulosEmber;
+        private PictureBox pictureBox2;
     }
 }

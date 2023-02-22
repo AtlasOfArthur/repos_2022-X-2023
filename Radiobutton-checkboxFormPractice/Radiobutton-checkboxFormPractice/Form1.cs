@@ -6,8 +6,10 @@ namespace Radiobutton_checkboxFormPractice
         {
             InitializeComponent();
         }
-        private int a1, b1, c1, d1, e1, f1, a2, b2, c2, d2, e2, f2, a3, b3, c3, d3, e3, f3, a4, b4, c4, d4, e4, f4, a5, b5, c5, d5, e5, f5, a6, b6, c6, d6, e6, f6, a7, b7, c7, d7, e7, f7, a8, b8, c8, d8, e8, f8, a9, b9, c9, d9, e9, f9, a10, b10, c10, d10, e10, f10;
 
+           private int a1, b1, c1, d1, e1, f1, a2, b2, c2, d2, e2, f2, a3, b3, c3, d3, e3, f3, a4, b4, c4, d4, e4, f4, a5, b5, c5, d5, e5, f5, a6, b6, c6, d6, e6, f6, a7, b7, c7, d7, e7, f7, a8, b8, c8, d8, e8, f8, a9, b9, c9, d9, e9, f9, a10, b10, c10, d10, e10, f10;
+
+       
         // Napit nollaa, mutta tulokset ei
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,6 +38,8 @@ namespace Radiobutton_checkboxFormPractice
                 radioButton2.Checked = false;
             }
         }
+
+        
 
 
         /*
@@ -175,26 +179,7 @@ namespace Radiobutton_checkboxFormPractice
             }
             else
             {
-                c1 = 0;  // Emerald
-                c2 = 0;  // Hydro
-                c3 = 0;  // Royal
-                c4 = 0;  // Musta
-                c5 = 0;  // Ember
-                c6 = 0;  // Amber
-                c7 = 0;  // Kristalli
-                c8 = 0;  // Kupari
-                c9 = 0;  // Electra
-                c10 = 0; // Arctik
-                label1.Text = (a1 + b1 + c1 + d1 + e1 + f1).ToString();
-                label2.Text = (a2 + b2 + c2 + d2 + e2 + f2).ToString();
-                label3.Text = (a3 + b3 + c3 + d3 + e3 + f3).ToString();
-                label4.Text = (a4 + b4 + c4 + d4 + e4 + f4).ToString();
-                label5.Text = (a5 + b5 + c5 + d5 + e5 + f5).ToString();
-                label6.Text = (a6 + b6 + c6 + d6 + e6 + f6).ToString();
-                label7.Text = (a7 + b7 + c7 + d7 + e7 + f7).ToString();
-                label8.Text = (a8 + b8 + c8 + d8 + e8 + f8).ToString();
-                label9.Text = (a9 + b9 + c9 + d9 + e9 + f9).ToString();
-                label10.Text = (a10 + b10 + c10 + d10 + e10 + f10).ToString();
+                Radiobutton3UncheckedVal();
             }
         }
         private void radioButton4_CheckedChanged(object sender, EventArgs e)

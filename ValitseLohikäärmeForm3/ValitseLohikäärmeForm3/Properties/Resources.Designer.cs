@@ -63,6 +63,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20230205_204744 {
+            get {
+                object obj = ResourceManager.GetObject("20230205_204744", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4_Ovea_WoodFloor {
             get {
                 object obj = ResourceManager.GetObject("4-Ovea&WoodFloor", resourceCulture);
@@ -76,6 +86,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         internal static System.Drawing.Bitmap AmberDragonEgg_Nest {
             get {
                 object obj = ResourceManager.GetObject("AmberDragonEgg_Nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Amberkuva {
+            get {
+                object obj = ResourceManager.GetObject("Amberkuva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace ValitseLohikäärmeForm3.Properties {
         internal static System.Drawing.Bitmap Kehys1_Horizontal {
             get {
                 object obj = ResourceManager.GetObject("Kehys1-Horizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kirja {
+            get {
+                object obj = ResourceManager.GetObject("Kirja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
