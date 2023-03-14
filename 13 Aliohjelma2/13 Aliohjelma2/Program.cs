@@ -19,7 +19,7 @@ for (int i = 1; i < 4; i++)
     list.Add(int.Parse(Console.ReadLine()));
 }
 
-Console.WriteLine(KolmenLuvunSumma(list[0], list[1], list[2]));
+Console.WriteLine("Antamiesi lukujen " + list[0] + ", " + list[1] + ", " + list[2] + " summa on " + (KolmenLuvunSumma(list[0], list[1], list[2])));
 
 
 /*
