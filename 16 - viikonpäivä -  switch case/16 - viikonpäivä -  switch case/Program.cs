@@ -22,10 +22,10 @@ static string GetPaivanNimi(int numero) // Aliohjelma viikonpäiville. Tulostaa 
             return null;
     }
 }
-bool exit = false;
-string exitK;
-string valinta;
-string paivanNimi;
+bool exit = false; // Exit boolean lopettamista varten
+string exitK; // string muuttuja käyttäjän vastaukselle kun kysytään että lopetetaanko
+string valinta; // Käyttöjän valinta (viikonpäivän numero) 1-7 tallentuu tähän
+string paivanNimi; // Päivän nimi tallentuu tähän käyttäjän valinnan mukaan 1-7
 
 while (!exit)
 {
