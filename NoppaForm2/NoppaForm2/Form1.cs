@@ -19,7 +19,7 @@ namespace NoppaForm2
             Random satunnainen = new Random();
             int noppa = satunnainen.Next(1, 7); // noppa ottaa arvotun satunnaisen (1-6)
             switch (noppa)                      // ja tulostaa yhden kuvan satunnaisen mukaan
-            {
+            {               // casesta riippuen hakee tulostettavan kuvan resources kansiosta
                 case 1:
                     NoppaBox.Image = Properties.Resources.dices_1;
                     break;
