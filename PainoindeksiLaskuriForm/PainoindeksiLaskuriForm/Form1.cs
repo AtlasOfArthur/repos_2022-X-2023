@@ -21,7 +21,7 @@ namespace PainoindeksiLaskuriForm
                 {
                     vastausLB.Text = "Painoindeksisi on " + painoindeksi;
                     vastausLB.ForeColor = Color.Red;
-                    KuvausLB.Text = "! Olet vaarassa kuolla !";  // Perustuu karkeasti matalien painoindeksi kuolemien tilastoihin
+                    KuvausLB.Text = "! Olet vaarassa kuolla alipainoon !";  // Perustuu karkeasti matalien painoindeksi kuolemien tilastoihin
                     KuvausLB.ForeColor = Color.Red;
                 }
                 else if (painoindeksi < 15)

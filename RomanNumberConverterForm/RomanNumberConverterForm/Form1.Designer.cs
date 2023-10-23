@@ -29,87 +29,86 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RomanConverter));
-            this.RoomalaisetNumerotLB = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.VastausLB = new System.Windows.Forms.Label();
-            this.MuunnaBT = new System.Windows.Forms.Button();
-            this.NumeroTB = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            RoomalaisetNumerotLB = new Label();
+            label2 = new Label();
+            VastausLB = new Label();
+            MuunnaBT = new Button();
+            NumeroTB = new TextBox();
+            SuspendLayout();
             // 
             // RoomalaisetNumerotLB
             // 
-            this.RoomalaisetNumerotLB.AutoSize = true;
-            this.RoomalaisetNumerotLB.BackColor = System.Drawing.Color.Transparent;
-            this.RoomalaisetNumerotLB.Font = new System.Drawing.Font("Old English Text MT", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.RoomalaisetNumerotLB.ForeColor = System.Drawing.Color.Khaki;
-            this.RoomalaisetNumerotLB.Location = new System.Drawing.Point(43, 45);
-            this.RoomalaisetNumerotLB.Name = "RoomalaisetNumerotLB";
-            this.RoomalaisetNumerotLB.Size = new System.Drawing.Size(558, 71);
-            this.RoomalaisetNumerotLB.TabIndex = 0;
-            this.RoomalaisetNumerotLB.Text = "Roomalaiset numerot";
+            RoomalaisetNumerotLB.AutoSize = true;
+            RoomalaisetNumerotLB.BackColor = Color.Transparent;
+            RoomalaisetNumerotLB.Font = new Font("Old English Text MT", 36F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            RoomalaisetNumerotLB.ForeColor = Color.Khaki;
+            RoomalaisetNumerotLB.Location = new Point(43, 45);
+            RoomalaisetNumerotLB.Name = "RoomalaisetNumerotLB";
+            RoomalaisetNumerotLB.Size = new Size(558, 71);
+            RoomalaisetNumerotLB.TabIndex = 0;
+            RoomalaisetNumerotLB.Text = "Roomalaiset numerot";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Old English Text MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(43, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Anna numero väliltä 1 - 3999 \r\n";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Old English Text MT", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Gold;
+            label2.Location = new Point(43, 140);
+            label2.Name = "label2";
+            label2.Size = new Size(272, 24);
+            label2.TabIndex = 1;
+            label2.Text = "Anna numero väliltä 1 - 3999 \r\n";
             // 
             // VastausLB
             // 
-            this.VastausLB.AutoSize = true;
-            this.VastausLB.BackColor = System.Drawing.Color.Transparent;
-            this.VastausLB.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.VastausLB.ForeColor = System.Drawing.Color.Gold;
-            this.VastausLB.Location = new System.Drawing.Point(31, 260);
-            this.VastausLB.Name = "VastausLB";
-            this.VastausLB.Size = new System.Drawing.Size(118, 25);
-            this.VastausLB.TabIndex = 2;
-            this.VastausLB.Text = "Vastaus";
-            this.VastausLB.Visible = false;
+            VastausLB.AutoSize = true;
+            VastausLB.BackColor = Color.Transparent;
+            VastausLB.Font = new Font("Castellar", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            VastausLB.ForeColor = Color.Gold;
+            VastausLB.Location = new Point(31, 260);
+            VastausLB.Name = "VastausLB";
+            VastausLB.Size = new Size(118, 25);
+            VastausLB.TabIndex = 2;
+            VastausLB.Text = "Vastaus";
+            VastausLB.Visible = false;
             // 
             // MuunnaBT
             // 
-            this.MuunnaBT.BackColor = System.Drawing.Color.Black;
-            this.MuunnaBT.Font = new System.Drawing.Font("Bernard MT Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MuunnaBT.ForeColor = System.Drawing.Color.Khaki;
-            this.MuunnaBT.Location = new System.Drawing.Point(205, 176);
-            this.MuunnaBT.Name = "MuunnaBT";
-            this.MuunnaBT.Size = new System.Drawing.Size(110, 41);
-            this.MuunnaBT.TabIndex = 3;
-            this.MuunnaBT.Text = "Muunna";
-            this.MuunnaBT.UseVisualStyleBackColor = false;
-            this.MuunnaBT.Click += new System.EventHandler(this.MuunnaBT_Click);
+            MuunnaBT.BackColor = Color.Black;
+            MuunnaBT.Font = new Font("Bernard MT Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            MuunnaBT.ForeColor = Color.Khaki;
+            MuunnaBT.Location = new Point(205, 176);
+            MuunnaBT.Name = "MuunnaBT";
+            MuunnaBT.Size = new Size(110, 41);
+            MuunnaBT.TabIndex = 3;
+            MuunnaBT.Text = "Muunna";
+            MuunnaBT.UseVisualStyleBackColor = false;
+            MuunnaBT.Click += MuunnaBT_Click;
             // 
             // NumeroTB
             // 
-            this.NumeroTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumeroTB.Location = new System.Drawing.Point(43, 178);
-            this.NumeroTB.Name = "NumeroTB";
-            this.NumeroTB.Size = new System.Drawing.Size(125, 34);
-            this.NumeroTB.TabIndex = 4;
+            NumeroTB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            NumeroTB.Location = new Point(43, 178);
+            NumeroTB.Name = "NumeroTB";
+            NumeroTB.Size = new Size(125, 34);
+            NumeroTB.TabIndex = 4;
             // 
             // RomanConverter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(639, 363);
-            this.Controls.Add(this.NumeroTB);
-            this.Controls.Add(this.MuunnaBT);
-            this.Controls.Add(this.VastausLB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.RoomalaisetNumerotLB);
-            this.Name = "RomanConverter";
-            this.Text = "Numeron muutos arabialaisesta roomalaiseksi";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(639, 363);
+            Controls.Add(NumeroTB);
+            Controls.Add(MuunnaBT);
+            Controls.Add(VastausLB);
+            Controls.Add(label2);
+            Controls.Add(RoomalaisetNumerotLB);
+            Name = "RomanConverter";
+            Text = "Numeron muutos arabialaisesta roomalaiseksi - Anselmi Harjama";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

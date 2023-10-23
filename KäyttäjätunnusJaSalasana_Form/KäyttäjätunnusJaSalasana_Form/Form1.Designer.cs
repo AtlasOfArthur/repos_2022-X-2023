@@ -28,126 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.salasanaPanel = new System.Windows.Forms.Panel();
-            this.virheviestiLB = new System.Windows.Forms.Label();
-            this.tarkistaBT = new System.Windows.Forms.Button();
-            this.SalasanaBox = new System.Windows.Forms.TextBox();
-            this.KayttajaBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.kayttajaLB = new System.Windows.Forms.Label();
-            this.salasanaoikeinPanel = new System.Windows.Forms.Panel();
-            this.TervetuloaLB = new System.Windows.Forms.Label();
-            this.salasanaPanel.SuspendLayout();
-            this.salasanaoikeinPanel.SuspendLayout();
-            this.SuspendLayout();
+            salasanaPanel = new Panel();
+            salasanaoikeinPanel = new Panel();
+            TervetuloaLB = new Label();
+            virheviestiLB = new Label();
+            tarkistaBT = new Button();
+            SalasanaBox = new TextBox();
+            KayttajaBox = new TextBox();
+            label2 = new Label();
+            kayttajaLB = new Label();
+            salasanaPanel.SuspendLayout();
+            salasanaoikeinPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // salasanaPanel
             // 
-            this.salasanaPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            this.salasanaPanel.Controls.Add(this.salasanaoikeinPanel);
-            this.salasanaPanel.Controls.Add(this.virheviestiLB);
-            this.salasanaPanel.Controls.Add(this.tarkistaBT);
-            this.salasanaPanel.Controls.Add(this.SalasanaBox);
-            this.salasanaPanel.Controls.Add(this.KayttajaBox);
-            this.salasanaPanel.Controls.Add(this.label2);
-            this.salasanaPanel.Controls.Add(this.kayttajaLB);
-            this.salasanaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salasanaPanel.Location = new System.Drawing.Point(0, 0);
-            this.salasanaPanel.Name = "salasanaPanel";
-            this.salasanaPanel.Size = new System.Drawing.Size(545, 268);
-            this.salasanaPanel.TabIndex = 0;
-            // 
-            // virheviestiLB
-            // 
-            this.virheviestiLB.AutoSize = true;
-            this.virheviestiLB.Location = new System.Drawing.Point(97, 223);
-            this.virheviestiLB.Name = "virheviestiLB";
-            this.virheviestiLB.Size = new System.Drawing.Size(295, 20);
-            this.virheviestiLB.TabIndex = 5;
-            this.virheviestiLB.Text = "Käyttäjätunnus tai salasana viesti";
-            this.virheviestiLB.Visible = false;
-            // 
-            // tarkistaBT
-            // 
-            this.tarkistaBT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tarkistaBT.Location = new System.Drawing.Point(235, 167);
-            this.tarkistaBT.Name = "tarkistaBT";
-            this.tarkistaBT.Size = new System.Drawing.Size(94, 29);
-            this.tarkistaBT.TabIndex = 4;
-            this.tarkistaBT.Text = "Tarkista";
-            this.tarkistaBT.UseVisualStyleBackColor = false;
-            this.tarkistaBT.Click += new System.EventHandler(this.tarkistaBT_Click);
-            // 
-            // SalasanaBox
-            // 
-            this.SalasanaBox.Location = new System.Drawing.Point(196, 99);
-            this.SalasanaBox.Name = "SalasanaBox";
-            this.SalasanaBox.Size = new System.Drawing.Size(277, 27);
-            this.SalasanaBox.TabIndex = 3;
-            // 
-            // KayttajaBox
-            // 
-            this.KayttajaBox.Location = new System.Drawing.Point(196, 42);
-            this.KayttajaBox.Name = "KayttajaBox";
-            this.KayttajaBox.Size = new System.Drawing.Size(277, 27);
-            this.KayttajaBox.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(97, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Salasana";
-            // 
-            // kayttajaLB
-            // 
-            this.kayttajaLB.AutoSize = true;
-            this.kayttajaLB.Location = new System.Drawing.Point(42, 49);
-            this.kayttajaLB.Name = "kayttajaLB";
-            this.kayttajaLB.Size = new System.Drawing.Size(139, 20);
-            this.kayttajaLB.TabIndex = 0;
-            this.kayttajaLB.Text = "Käyttäjätunnus";
+            salasanaPanel.BackColor = Color.FromArgb(2, 43, 26);
+            salasanaPanel.Controls.Add(salasanaoikeinPanel);
+            salasanaPanel.Controls.Add(virheviestiLB);
+            salasanaPanel.Controls.Add(tarkistaBT);
+            salasanaPanel.Controls.Add(SalasanaBox);
+            salasanaPanel.Controls.Add(KayttajaBox);
+            salasanaPanel.Controls.Add(label2);
+            salasanaPanel.Controls.Add(kayttajaLB);
+            salasanaPanel.Dock = DockStyle.Fill;
+            salasanaPanel.Location = new Point(0, 0);
+            salasanaPanel.Name = "salasanaPanel";
+            salasanaPanel.Size = new Size(545, 268);
+            salasanaPanel.TabIndex = 0;
             // 
             // salasanaoikeinPanel
             // 
-            this.salasanaoikeinPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.salasanaoikeinPanel.Controls.Add(this.TervetuloaLB);
-            this.salasanaoikeinPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salasanaoikeinPanel.Location = new System.Drawing.Point(0, 0);
-            this.salasanaoikeinPanel.Name = "salasanaoikeinPanel";
-            this.salasanaoikeinPanel.Size = new System.Drawing.Size(545, 268);
-            this.salasanaoikeinPanel.TabIndex = 1;
-            this.salasanaoikeinPanel.Visible = false;
+            salasanaoikeinPanel.BackColor = Color.FromArgb(64, 0, 64);
+            salasanaoikeinPanel.Controls.Add(TervetuloaLB);
+            salasanaoikeinPanel.Dock = DockStyle.Fill;
+            salasanaoikeinPanel.Location = new Point(0, 0);
+            salasanaoikeinPanel.Name = "salasanaoikeinPanel";
+            salasanaoikeinPanel.Size = new Size(545, 268);
+            salasanaoikeinPanel.TabIndex = 1;
+            salasanaoikeinPanel.Visible = false;
             // 
             // TervetuloaLB
             // 
-            this.TervetuloaLB.AutoSize = true;
-            this.TervetuloaLB.Font = new System.Drawing.Font("Magneto", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.TervetuloaLB.Location = new System.Drawing.Point(42, 106);
-            this.TervetuloaLB.Name = "TervetuloaLB";
-            this.TervetuloaLB.Size = new System.Drawing.Size(461, 48);
-            this.TervetuloaLB.TabIndex = 0;
-            this.TervetuloaLB.Text = "Tervetuloa sivulleni!";
+            TervetuloaLB.AutoSize = true;
+            TervetuloaLB.Font = new Font("Magneto", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            TervetuloaLB.Location = new Point(42, 106);
+            TervetuloaLB.Name = "TervetuloaLB";
+            TervetuloaLB.Size = new Size(461, 48);
+            TervetuloaLB.TabIndex = 0;
+            TervetuloaLB.Text = "Tervetuloa sivulleni!";
+            // 
+            // virheviestiLB
+            // 
+            virheviestiLB.AutoSize = true;
+            virheviestiLB.Location = new Point(97, 223);
+            virheviestiLB.Name = "virheviestiLB";
+            virheviestiLB.Size = new Size(295, 20);
+            virheviestiLB.TabIndex = 5;
+            virheviestiLB.Text = "Käyttäjätunnus tai salasana viesti";
+            virheviestiLB.Visible = false;
+            // 
+            // tarkistaBT
+            // 
+            tarkistaBT.BackColor = Color.FromArgb(0, 64, 0);
+            tarkistaBT.Location = new Point(235, 167);
+            tarkistaBT.Name = "tarkistaBT";
+            tarkistaBT.Size = new Size(94, 29);
+            tarkistaBT.TabIndex = 4;
+            tarkistaBT.Text = "Tarkista";
+            tarkistaBT.UseVisualStyleBackColor = false;
+            tarkistaBT.Click += tarkistaBT_Click;
+            // 
+            // SalasanaBox
+            // 
+            SalasanaBox.Location = new Point(196, 99);
+            SalasanaBox.Name = "SalasanaBox";
+            SalasanaBox.Size = new Size(277, 27);
+            SalasanaBox.TabIndex = 3;
+            // 
+            // KayttajaBox
+            // 
+            KayttajaBox.Location = new Point(196, 42);
+            KayttajaBox.Name = "KayttajaBox";
+            KayttajaBox.Size = new Size(277, 27);
+            KayttajaBox.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(97, 106);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Salasana";
+            // 
+            // kayttajaLB
+            // 
+            kayttajaLB.AutoSize = true;
+            kayttajaLB.Location = new Point(42, 49);
+            kayttajaLB.Name = "kayttajaLB";
+            kayttajaLB.Size = new Size(139, 20);
+            kayttajaLB.TabIndex = 0;
+            kayttajaLB.Text = "Käyttäjätunnus";
             // 
             // käyttäjätunnusJaSalasana
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 268);
-            this.Controls.Add(this.salasanaPanel);
-            this.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.Color.Gold;
-            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.Name = "käyttäjätunnusJaSalasana";
-            this.Text = "Salasanan tarkastus";
-            this.salasanaPanel.ResumeLayout(false);
-            this.salasanaPanel.PerformLayout();
-            this.salasanaoikeinPanel.ResumeLayout(false);
-            this.salasanaoikeinPanel.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(11F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(545, 268);
+            Controls.Add(salasanaPanel);
+            Font = new Font("Rockwell", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = Color.Gold;
+            Margin = new Padding(5, 3, 5, 3);
+            Name = "käyttäjätunnusJaSalasana";
+            Text = "Salasanan tarkastus";
+            salasanaPanel.ResumeLayout(false);
+            salasanaPanel.PerformLayout();
+            salasanaoikeinPanel.ResumeLayout(false);
+            salasanaoikeinPanel.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
