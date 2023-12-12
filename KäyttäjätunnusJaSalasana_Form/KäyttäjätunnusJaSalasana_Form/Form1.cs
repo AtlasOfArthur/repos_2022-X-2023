@@ -11,7 +11,7 @@ namespace KäyttäjätunnusJaSalasana_Form
         {
             if (KayttajaBox.Text == "Arthur" && SalasanaBox.Text == "salasanakala")
             {
-                salasanaPanel.Visible = false;
+            /// salasanaPanel.Visible = false; /// Jos laittaa tämän, katoaa molemmat panelit
                 salasanaoikeinPanel.Visible = true;
             }
             else
