@@ -1,0 +1,69 @@
+Tänään harjoittelin Windows Forms päiväkirjan tekemistä. 13.12.2023 12.48
+Testataan toimiiko ohjelma halutulla tavalla! 13.12.2023 12.50
+13.12.2023 13.02 
+
+Testataan toimiiko uusi (Parempi) asettelu. (Testi1)
+
+
+13.12.2023 13.02 
+
+Uusi asettelu (Test2)
+
+Löin pari entteriä
+Vielä yksi
+...
+
+
+13.12.2023 13.03 
+
+(Testi3)
+
+
+13.12.2023 13.05 
+
+Lisätty koodiin vielä yksi \n
+jotta edellisen tekstin ja uuden päivämäärän väli olisi selkeämpi.
+
+
+
+13.12.2023 13.06 
+
+(Testi5) Viimeinen testi OOOOOOOOOOAAAAAAAAAAAOOOOOOOOOA
+fwemgmfmgdfg lolololollooll
+fjofjweoifhjeowifhjoiewjf
+noniiiinnn!
+
+
+
+13.12.2023 13.12 
+
+Laitan päiväkirjaan koodin jolla päiväkirjaohjelma toimii. Kätevää!:
+
+namespace _14_Päiväkirja
+{
+    public partial class PäiväkirjaForm : Form
+    {
+        public PäiväkirjaForm()
+        {
+            InitializeComponent();
+        }
+
+        private void TallennaBT_Click(object sender, EventArgs e)
+        {
+            string uusiTeksti = File.ReadAllText(@"C:\\Users\\arthur\\source\\repos\\14-Päiväkirja\\Paivakirja.txt");
+                                                    /// c/Users/arthur/source/repos/14-Päiväkirja
+            
+            uusiTeksti += DateTime.Now.ToString("dd.MM.yyyy HH:mm") + " " + "\n\n";
+            uusiTeksti += SyottoTB.Text + "\n\n\n\ncat";
+            TextWriter text = new StreamWriter("C:\\Users\\arthur\\source\\repos\\14-Päiväkirja\\Paivakirja.txt");
+            text.Write(uusiTeksti);
+            text.Close();
+            Application.Exit();
+
+        }
+    }
+}
+
+
+
+cat
