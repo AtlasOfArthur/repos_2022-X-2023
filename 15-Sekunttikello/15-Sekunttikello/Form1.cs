@@ -33,7 +33,7 @@ namespace _15_Sekunttikello
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sekkari = new Stopwatch();
+            sekkari = new Stopwatch(); // Tämä resetoi, eli tekee uuden olion (objektin) aina kun formi loadataan
         }
     }
 }
