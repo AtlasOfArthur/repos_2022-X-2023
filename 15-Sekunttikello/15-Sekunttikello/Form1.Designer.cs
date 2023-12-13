@@ -48,35 +48,38 @@
             // 
             // KäynnistäBT
             // 
+            KäynnistäBT.BackColor = Color.Bisque;
             KäynnistäBT.Font = new Font("Stencil", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KäynnistäBT.Location = new Point(53, 236);
             KäynnistäBT.Name = "KäynnistäBT";
             KäynnistäBT.Size = new Size(254, 123);
             KäynnistäBT.TabIndex = 1;
             KäynnistäBT.Text = "Start";
-            KäynnistäBT.UseVisualStyleBackColor = true;
+            KäynnistäBT.UseVisualStyleBackColor = false;
             KäynnistäBT.Click += KäynnistäBT_Click;
             // 
             // PysäytäBT
             // 
+            PysäytäBT.BackColor = Color.Bisque;
             PysäytäBT.Font = new Font("Stencil", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PysäytäBT.Location = new Point(342, 236);
             PysäytäBT.Name = "PysäytäBT";
             PysäytäBT.Size = new Size(254, 123);
             PysäytäBT.TabIndex = 2;
             PysäytäBT.Text = "Stop";
-            PysäytäBT.UseVisualStyleBackColor = true;
+            PysäytäBT.UseVisualStyleBackColor = false;
             PysäytäBT.Click += PysäytäBT_Click;
             // 
             // TyhjennäBT
             // 
+            TyhjennäBT.BackColor = Color.Bisque;
             TyhjennäBT.Font = new Font("Stencil", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TyhjennäBT.Location = new Point(631, 236);
             TyhjennäBT.Name = "TyhjennäBT";
             TyhjennäBT.Size = new Size(254, 123);
             TyhjennäBT.TabIndex = 3;
             TyhjennäBT.Text = "Clear";
-            TyhjennäBT.UseVisualStyleBackColor = true;
+            TyhjennäBT.UseVisualStyleBackColor = false;
             TyhjennäBT.Click += TyhjennäBT_Click;
             // 
             // timer1
@@ -88,6 +91,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Tan;
             ClientSize = new Size(951, 411);
             Controls.Add(TyhjennäBT);
             Controls.Add(PysäytäBT);
