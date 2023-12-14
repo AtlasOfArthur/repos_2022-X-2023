@@ -42,7 +42,9 @@
             // 
             // TextRichTB
             // 
+            TextRichTB.BackColor = Color.Black;
             TextRichTB.Dock = DockStyle.Fill;
+            TextRichTB.ForeColor = Color.MintCream;
             TextRichTB.Location = new Point(0, 30);
             TextRichTB.Name = "TextRichTB";
             TextRichTB.Size = new Size(1100, 600);
