@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             MinuutitLB = new Label();
-            SekunnitLB = new Label();
+            SekuntitLB = new Label();
             MinCB = new ComboBox();
             SecCB = new ComboBox();
             StartBT = new Button();
-            label1 = new Label();
+            AikaLB = new Label();
             StopBT = new Button();
             AjastinTM = new System.Windows.Forms.Timer(components);
             SuspendLayout();
@@ -49,15 +49,15 @@
             MinuutitLB.TabIndex = 0;
             MinuutitLB.Text = "Minuutit";
             // 
-            // SekunnitLB
+            // SekuntitLB
             // 
-            SekunnitLB.AutoSize = true;
-            SekunnitLB.Font = new Font("Stencil", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SekunnitLB.Location = new Point(243, 30);
-            SekunnitLB.Name = "SekunnitLB";
-            SekunnitLB.Size = new Size(209, 44);
-            SekunnitLB.TabIndex = 1;
-            SekunnitLB.Text = "Sekunnit";
+            SekuntitLB.AutoSize = true;
+            SekuntitLB.Font = new Font("Stencil", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SekuntitLB.Location = new Point(243, 30);
+            SekuntitLB.Name = "SekuntitLB";
+            SekuntitLB.Size = new Size(206, 44);
+            SekuntitLB.TabIndex = 1;
+            SekuntitLB.Text = "Sekuntit";
             // 
             // MinCB
             // 
@@ -76,6 +76,7 @@
             SecCB.FormattingEnabled = true;
             SecCB.Location = new Point(243, 77);
             SecCB.Name = "SecCB";
+            SecCB.RightToLeft = RightToLeft.Yes;
             SecCB.Size = new Size(209, 43);
             SecCB.TabIndex = 3;
             // 
@@ -91,15 +92,15 @@
             StartBT.UseVisualStyleBackColor = false;
             StartBT.Click += StartBT_Click;
             // 
-            // label1
+            // AikaLB
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("OCR A Extended", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(35, 137);
-            label1.Name = "label1";
-            label1.Size = new Size(417, 123);
-            label1.TabIndex = 5;
-            label1.Text = "00:00";
+            AikaLB.AutoSize = true;
+            AikaLB.Font = new Font("OCR A Extended", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AikaLB.Location = new Point(35, 137);
+            AikaLB.Name = "AikaLB";
+            AikaLB.Size = new Size(417, 123);
+            AikaLB.TabIndex = 5;
+            AikaLB.Text = "00:00";
             // 
             // StopBT
             // 
@@ -125,14 +126,14 @@
             BackColor = Color.OldLace;
             ClientSize = new Size(489, 386);
             Controls.Add(StopBT);
-            Controls.Add(label1);
+            Controls.Add(AikaLB);
             Controls.Add(StartBT);
             Controls.Add(SecCB);
             Controls.Add(MinCB);
-            Controls.Add(SekunnitLB);
+            Controls.Add(SekuntitLB);
             Controls.Add(MinuutitLB);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "AjastinForm";
             Text = "Ajastin";
             Load += AjastinForm_Load;
@@ -143,11 +144,11 @@
         #endregion
 
         private Label MinuutitLB;
-        private Label SekunnitLB;
+        private Label SekuntitLB;
         private ComboBox MinCB;
         private ComboBox SecCB;
         private Button StartBT;
-        private Label label1;
+        private Label AikaLB;
         private Button StopBT;
         private System.Windows.Forms.Timer AjastinTM;
     }
