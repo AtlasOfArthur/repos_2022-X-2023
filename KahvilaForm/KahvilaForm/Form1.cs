@@ -7,7 +7,10 @@ namespace KahvilaForm
             InitializeComponent();
             MeistaPanel.Visible = true; // Käynnistyessä näyttää MeistaPanelin
         }
-
+        /// HUOM: Tein kaikki elementit ensin ja otin kuvat, ennen kuin lisäsin näppäimiin ja yläpaneliin png kuvia 
+        /// Syy tähän oli, että ensimäisellä kerralla kun tein tehtävää, pääsin cook-hat.png laittoon ja visualstudio alkoi temppuilla
+        /// En halunnut ottaa riskiä että sama virhe toistuu. Siksi lisäsin kuvat viimeisenä (Nyt vika ei toistunut)
+     
         private void RuokalistaForm_Load(object sender, EventArgs e)
         {
             // Voidaan syöttää teksti siinä vaiheessa kun formi ladataan, mutta on myös toinen tapa
