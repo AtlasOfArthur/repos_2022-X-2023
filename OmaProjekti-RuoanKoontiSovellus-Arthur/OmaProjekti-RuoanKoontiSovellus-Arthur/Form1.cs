@@ -7,9 +7,9 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
 
         // Tietorakenteet ainesosaluettelossa tulevat olemaan isoja. siksi en luo koko luetteloa heti
         // T‰m‰n sijaan luettelot luodaan vasta kun niit‰ k‰ytet‰‰n
-        private DataTable dataKategoriat;
-        private DataTable dataAinesosat;
-        
+        DataTable dataKategoriat;
+        DataTable dataAinesosat = new DataTable("Ainesosat"); // Luon t‰m‰n heti, vaikka se onkin laaja, koska oli ongelmia saada toimimaan
+        DataTable yhteys = new DataTable(); // Yhteys kategorian ja sen aineiden v‰lille
 
         public AterianKoontiForm()
         {
@@ -20,13 +20,27 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         {
             WelcomePanel.Visible = true; // Mahdollisesti turha, mutta varmistaa ett‰ tervetuloa paneli on k‰ynnistyksen yhteydess‰ oikealla paikallaan
 
-            // Alla oleva rivi kutsuu Kategoriat DataTablen funktiota. Ainesosat DataTable luodaan ja kutsutaan myˆhemmin viiveen v‰ltt‰miseksi.
-            // (Tai sit‰ on ainakin tarkoitus yritt‰‰)
             LuoJaTaytaKategoriatDataTable();
+            LuoJaTaytaAinesosaDataTable();
+            KategoriaCB.DataSource = dataKategoriat;
+            KategoriaCB.DisplayMember = "Kategoria";
         }
 
-        //----------------------------------------------------------------------------------------------//
+        private void KategoriaCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRow selectedKategoria = dataKategoriat.Rows[KategoriaCB.SelectedIndex];
 
+            int kategoriaID = (int)selectedKategoria["ID"];
+            DataRow[] selectedAinesosat = dataAinesosat.Select("ID =" + kategoriaID);
+
+            yhteys = selectedAinesosat.CopyToDataTable();
+            AinesosaCB.DataSource = yhteys;
+            AinesosaCB.DisplayMember = "Aines_1_Nimi";
+        }
+
+
+        //----------------------------------------------------------------------------------------------//
+        // KategoriaCB
         private void LuoJaTaytaKategoriatDataTable()
         {
 
@@ -47,82 +61,79 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             KategoriaCB.DataSource = dataKategoriat; // Tuo objektit n‰kyviin comboboksissa
             KategoriaCB.DisplayMember = "Kategoria"; // Tuo objektien nimet comboboksiin. Jos t‰ss‰ on kirjoitusvirhe tai puuttuu kokonaan, ei ilmaise virhett‰, mutta ei tuota comboboksin sis‰ltˆ‰ oikein.
                                                      // Silloin ilmaisee jokaisen sarakkeen kohdalla: System-Data-DataRowView
+        // P‰‰tin ett‰ en edes yrit‰ p‰ivitt‰‰ listaa ilman " " -lkategoriaa, koska en vaan onnistu. Menee se n‰inkin...
+        }
 
-            /* Ei toimi
-            // Jos valittu kategoria ei ole ensimm‰inen tyhj‰ kategoria (" "),  tyhjent‰‰ dataKategoriat-tietorakenteen rivit ja lis‰‰ uudet kategoriat.
-            // T‰m‰ mahdollistaa kategorian valinnan muuttamisen vaikuttamatta alkuper‰iseen " " kategoriaan.
-            KategoriaCB.SelectedIndexChanged += (sender, e) =>
+        //----------------------------------------------------------------------------------------------//
+        private void LuoJaTaytaAinesosaDataTable()
+        {
+            dataAinesosat.Columns.Add("ID", typeof(int));
+            dataAinesosat.Columns.Add("Aines_1_Nimi");
+            dataAinesosat.Columns.Add("Aines_2_Nimi");
+            dataAinesosat.Columns.Add("Aines_3_Nimi");
+
+            DataRow ainesosaRow = dataAinesosat.NewRow();
+            ainesosaRow["ID"] = 1;
+            ainesosaRow["Aines_1_Nimi"] = "Kana";
+            ainesosaRow["Aines_2_Nimi"] = "Nauta";
+            ainesosaRow["Aines_3_Nimi"] = "Sika";
+            dataAinesosat.Rows.Add(ainesosaRow);
+        }
+
+
+        // AinesosatCB
+        /*
+        private void LuoJaTaytaAinesosatDataTable(string valittuKategoria)
+        {
+
+            // Tyhjennet‰‰n aikaisemmat tiedot
+            dataAinesosat.Clear();
+
+            // T‰ytet‰‰n ainesosat valitun kategorian mukaisesti switch case -rakenteella
+            switch (valittuKategoria)
             {
-                if (KategoriaCB.SelectedIndex != 0)
-                {
-                    dataKategoriat.Rows.Clear();
-
-                    string[] uudetKategoriat = { "Liha", "Kala", "Marjat", "Hedelm‰t", "Juurekset", "Vihannekset", "P‰hkin‰t/Siemenet", "Viljat", "Yrtit", "Sienet", "Sipulit", "Rasvat", "Maitotuotteet", "Muut" };
-                    foreach (var kategoria in uudetKategoriat)
+                case "Liha":
+                    string[] lihaAinesosat = { "Kana", "Nauta", "Sika" };
+                    foreach (var ainesosa in lihaAinesosat)
                     {
-                        dataKategoriat.Rows.Add(kategoria);
+                        dataAinesosat.Rows.Add(ainesosa);
                     }
-                }
-            };*/
-            /* Ei toimi t‰m‰k‰‰n! Vaihdetaan taktiikkaa...
-            KategoriaCB.SelectedIndexChanged += (sender, e) =>
-            {
-                // Tarkista onko " " -kategoria l‰sn‰
-                bool containsEmptyCategory = false;
-                DataRow emptyCategoryRow = null;
-                foreach (DataRow row in dataKategoriat.Rows)
-                {
-                    if (row["Kategoria"].ToString() == " ")
+                    break;
+
+                case "Kala":
+                    string[] kalaAinesosat = { "Lohi", "Silakka", "Taimen", "Ahven" };
+                    foreach (var ainesosa in kalaAinesosat)
                     {
-                        containsEmptyCategory = true;
-                        emptyCategoryRow = row;
-                        break;
+                        dataAinesosat.Rows.Add(ainesosa);
                     }
-                }
+                    break;
 
-                // Jos " " -kategoria lˆytyy, poista se
-                if (containsEmptyCategory && KategoriaCB.SelectedIndex != 0)
-                {
-                    dataKategoriat.Rows.Remove(emptyCategoryRow);
-                }
-
-                // Lis‰‰ lopuksi uudet kategoriat
-                string[] uudetKategoriat = { "Liha", "Kala", "Marjat", "Hedelm‰t", "Juurekset", "Vihannekset", "P‰hkin‰t/Siemenet", "Viljat", "Yrtit", "Sienet", "Sipulit", "Rasvat", "Maitotuotteet", "Muut" };
-                foreach (var kategoria in uudetKategoriat)
-                {
-                    dataKategoriat.Rows.Add(kategoria);
-                }
-            }; */
-            /* // Ei toimi -.-'
-            KategoriaCB.SelectedIndexChanged += (sender, e) =>
-            {
-                // Tarkista onko " " -kategoria joukossa
-                bool containsEmptyCategory = kategoriat.Contains(" ");
-
-                // Poista " " -kategoria vain jos se on joukossa
-                if (containsEmptyCategory)
-                {
-                    DataRow[] emptyCategoryRows = dataKategoriat.Select("Kategoria = ' '");
-                    foreach (var emptyCategoryRow in emptyCategoryRows)
+                case "Marjat":
+                    string[] marjaAinesosat = { "Mansikka", "Vadelma", "Puolukka", "Mustikka", "Variksenmarja", "Tyrni" };
+                    foreach (var ainesosa in marjaAinesosat)
                     {
-                        dataKategoriat.Rows.Remove(emptyCategoryRow);
+                        dataAinesosat.Rows.Add(ainesosa);
                     }
+                    break;
 
-                    // Aseta SelectedIndex nollaksi p‰ivityksen j‰lkeen
-                    KategoriaCB.SelectedIndex = 0;
-                }
+                // Lis‰‰ tarvittavat tapaukset muille kategorioille
 
-                // Lis‰‰ lopuksi uudet kategoriat
-                string[] uudetKategoriat = { "Liha", "Kala", "Marjat", "Hedelm‰t", "Juurekset", "Vihannekset", "P‰hkin‰t/Siemenet", "Viljat", "Yrtit", "Sienet", "Sipulit", "Rasvat", "Maitotuotteet", "Muut" };
-                foreach (var kategoria in uudetKategoriat)
-                {
-                    dataKategoriat.Rows.Add(kategoria);
-                }
-            };
-            */
+                default:
+                    // Oletustapaus, jos ei ole valittu kategoriaa tai kategoria ei vastaa odotettua
+                    break;
+            }
+
+            // Sidotaan DataTable AinesosaCB ComboBoxiin
+            AinesosaCB.DataSource = dataAinesosat;
+            AinesosaCB.DisplayMember = "Ainesosa";
         }
         //----------------------------------------------------------------------------------------------//
-
+        private void KategoriaCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valittuKategoria = KategoriaCB.SelectedItem.ToString();
+            LuoJaTaytaAinesosatDataTable(valittuKategoria); // Kutsuu metodia, joka luo ja t‰ytt‰‰ ainesosat DataTablen valitun kategorian (Switch case) valinnan perusteella
+        }*/
+        //----------------------------------------------------------------------------------------------//
 
         private void CloseWelcomeBT_MouseHover(object sender, EventArgs e)
         {
