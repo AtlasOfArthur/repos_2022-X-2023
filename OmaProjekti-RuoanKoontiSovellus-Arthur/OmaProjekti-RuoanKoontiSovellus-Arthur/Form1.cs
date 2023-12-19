@@ -55,7 +55,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     new Ruoka
     {
         Kategoria = "Liha",
-        Laji = "Sika",
+        Laji = "Sika", // "Kinkku, viipaloitu, ravintola" Lähde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746952/nutrients
         Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1030.0f), ("Potassium", 484.0f), ("Kalsium", 6.0f), ("Fosfori", 424.0f), ("Magnesuum", 0.015f),
@@ -82,7 +82,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     new Ruoka
     {
         Kategoria = "Liha",
-        Laji = "Sika", // "Kinkku, viipaloitu, ravintola" Lähde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746952/nutrients
+        Laji = "Kana",
                 Aineet = new List<(string Nimi, float Arvo)> 
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
