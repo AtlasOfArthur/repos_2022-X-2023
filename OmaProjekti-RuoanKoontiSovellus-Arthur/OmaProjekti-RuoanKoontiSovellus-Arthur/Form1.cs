@@ -44,11 +44,11 @@ List<Ruoka> ruokaLista = new List<Ruoka>
         Laji = " ",
         Aineet = new List<(string Nimi, float Arvo)>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            ("Natrium", 0.0f), ("Potassium", 0.0f), ("Kalsium", 0.0f), ("Fosfori", 0.0f), ("Magnesuum", 0.0f),
+            ("Rauta", 0.0f), ("Sinkki", 0.0f), ("Jodi", 0.0f), ("Kupari", 0.0f), ("VitA", 1.0f),
+            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
+            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 0.0f), ("Prot", 0.0f),
+            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
         }
     },
     // Liha-kategoria
@@ -58,12 +58,13 @@ List<Ruoka> ruokaLista = new List<Ruoka>
         Laji = "Sika",
         Aineet = new List<(string Nimi, float Arvo)>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
-        }
+            ("Natrium", 1030.0f), ("Potassium", 484.0f), ("Kalsium", 6.0f), ("Fosfori", 424.0f), ("Magnesuum", 0.015f),
+            ("Rauta", 0.86f), ("Sinkki", 1.76f), ("Jodi", 0.0f), ("Kupari", 0.041f), ("VitA", 10),
+            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
+            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 2.36f), ("Sok", 2.2f), ("RasvaP", 2.275f), ("RasvaK", 1.25f), ("Kuidut", 25),
+        }// Note! Fatty acids, total monounsaturated + Fatty acids, total polyunsaturated = RasvaP
+                // Tietoa vitamiineista ei löytynyt
     },
     new Ruoka
     {
@@ -88,7 +89,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
             ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
             ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 19.6f),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            ("HiHy",  126), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Kala-kategoria
@@ -208,7 +209,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Sienet",
         Laji = " ",
-                Aineet = new List<(string Nimi, floa Arvo)>
+                Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -222,7 +223,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Sipulit",
         Laji = " ",
-                Aineet = new List<(string Nimi, floa Arvo)>
+                Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -264,14 +265,14 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Muut",
         Laji = " ",
-                Aineet = new List<(string Nimi, floa Arvo)>
+                Aineet = new List<(string Nimi, float Arvo)>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
-        }
+            ("Natrium", 0.0f), ("Potassium", 0.0f), ("Kalsium", 0.0f), ("Fosfori", 0.0f), ("Magnesuum", 0.0f),
+            ("Rauta", 0.0f), ("Sinkki", 0.0f), ("Jodi", 0.0f), ("Kupari", 0.0f), ("VitA", 1.0f),
+            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
+            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 0.0f), ("Prot", 0.0f),
+            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
+        } 
     }
     // ... Muut kategoriat ja lajit
 };

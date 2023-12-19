@@ -53,8 +53,8 @@
             KaliumArvoLB = new Label();
             PotassiumArvoLB = new Label();
             NatriumArvoLB = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            VitamiiniOtsikkoLB = new Label();
+            MineraaliOtsikkoLB = new Label();
             VitamiinitLB = new Label();
             MineraalitLB = new Label();
             MittaritLB = new Label();
@@ -169,8 +169,8 @@
             MittaritPanel.Controls.Add(KaliumArvoLB);
             MittaritPanel.Controls.Add(PotassiumArvoLB);
             MittaritPanel.Controls.Add(NatriumArvoLB);
-            MittaritPanel.Controls.Add(label1);
-            MittaritPanel.Controls.Add(label2);
+            MittaritPanel.Controls.Add(VitamiiniOtsikkoLB);
+            MittaritPanel.Controls.Add(MineraaliOtsikkoLB);
             MittaritPanel.Controls.Add(VitamiinitLB);
             MittaritPanel.Controls.Add(MineraalitLB);
             MittaritPanel.Location = new Point(552, 300);
@@ -358,27 +358,27 @@
             NatriumArvoLB.TabIndex = 10;
             NatriumArvoLB.Text = "0";
             // 
-            // label1
+            // VitamiiniOtsikkoLB
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
-            label1.Location = new Point(257, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 9;
-            label1.Text = "Vitamiinit";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            VitamiiniOtsikkoLB.AutoSize = true;
+            VitamiiniOtsikkoLB.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            VitamiiniOtsikkoLB.Location = new Point(257, 17);
+            VitamiiniOtsikkoLB.Name = "VitamiiniOtsikkoLB";
+            VitamiiniOtsikkoLB.Size = new Size(140, 23);
+            VitamiiniOtsikkoLB.TabIndex = 9;
+            VitamiiniOtsikkoLB.Text = "Vitamiinit";
+            VitamiiniOtsikkoLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // MineraaliOtsikkoLB
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
-            label2.Location = new Point(41, 17);
-            label2.Name = "label2";
-            label2.Size = new Size(140, 23);
-            label2.TabIndex = 8;
-            label2.Text = "Mineraalit";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            MineraaliOtsikkoLB.AutoSize = true;
+            MineraaliOtsikkoLB.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
+            MineraaliOtsikkoLB.Location = new Point(16, 17);
+            MineraaliOtsikkoLB.Name = "MineraaliOtsikkoLB";
+            MineraaliOtsikkoLB.Size = new Size(205, 23);
+            MineraaliOtsikkoLB.TabIndex = 8;
+            MineraaliOtsikkoLB.Text = "Mineraalit (Mg)";
+            MineraaliOtsikkoLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // VitamiinitLB
             // 
@@ -619,8 +619,8 @@
         private Label KaliumArvoLB;
         private Label PotassiumArvoLB;
         private Label NatriumArvoLB;
-        private Label label1;
-        private Label label2;
+        private Label VitamiiniOtsikkoLB;
+        private Label MineraaliOtsikkoLB;
         private Label B12ArvoLB;
         private Label B6ArvoLB;
         private Label B2ArvoLB;
