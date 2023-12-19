@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TervetuloaTextiLB.Text" xml:space="preserve">
+    <value>Tervetuloa käyttämään aterian luonti sovellusta joka laskee
+puolestasi tärkeimpiä ravintoaineita.
+
+Arvot joita ohjelma laskee perustuvat muunmuassa erinäisiin tutkimuksiin,
+mutta myös muihin tietoihin. On hyvä pitää mielessä
+sovellusta käyttäessäsi, että tiedot joita ohjelma antaa,
+eivät ole absoluuttisia.
+
+Ohjelman tarkoitus on helpottaa ravinnon saannin tasapainoisuuden arviointia.
+Älä koskaan ota saamiasi tuloksia kirjaimellisesti!
+
+Mukavia aterian koonti hetkiä! :)</value>
+  </data>
 </root>

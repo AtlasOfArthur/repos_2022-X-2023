@@ -36,7 +36,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
 
 List<Ruoka> ruokaLista = new List<Ruoka>
 {
-
+    // Jos arvot 0.0f, ei ole silloin välttämättä tiedossa
     // Tyhjä kategoria
     new Ruoka
     {
@@ -57,26 +57,26 @@ List<Ruoka> ruokaLista = new List<Ruoka>
         Kategoria = "Liha",
         Laji = "Sika", // "Kinkku, viipaloitu, ravintola" Lähde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746952/nutrients
         Aineet = new List<(string Nimi, float Arvo)>
-        {
+        {   // Arvot pitää päivittää, koska todennäköisesti tiedot maustetusta lihasta !!!! (Natrium korkea)
             ("Natrium", 1030.0f), ("Potassium", 484.0f), ("Kalsium", 6.0f), ("Fosfori", 424.0f), ("Magnesuum", 0.015f),
             ("Rauta", 0.86f), ("Sinkki", 1.76f), ("Jodi", 0.0f), ("Kupari", 0.041f), ("VitA", 10),
             ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
-            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 2.36f), ("Sok", 2.2f), ("RasvaP", 2.275f), ("RasvaK", 1.25f), ("Kuidut", 25),
+            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 216.0f), ("Prot", 19.6f),
+            ("HiHy", 2.36f), ("Sok", 2.2f), ("RasvaP", 2.275f), ("RasvaK", 1.25f), ("Kuidut", 0.0f),
         }// Note! Fatty acids, total monounsaturated + Fatty acids, total polyunsaturated = RasvaP
                 // Tietoa vitamiineista ei löytynyt
     },
     new Ruoka
     {
         Kategoria = "Liha",
-        Laji = "Nauta",
+        Laji = "Nauta", // "Naudanliha, lyhyt ulkofilee, t-bone pihvi..." Lähde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746763/nutrients
                 Aineet = new List<(string Nimi, float Arvo)>
-        {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+        {   // Tarkista vielä arvot
+            ("Natrium", 67.0f), ("Potassium", 283.0f), ("Kalsium", 19.0f), ("Fosfori", 211.0f), ("Magnesuum", 0.003f),
+            ("Rauta", 3.53f), ("Sinkki", 4.69f), ("Jodi", 0.0f), ("Kupari", 0.078f), ("VitA", 0.0f),
+            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
+            ("VitB2", 0.0f), ("VitB6", 0.75f), ("VitB12", 1.88f)/*(µg)*/, ("Kcal", 219.0f), ("Prot", 27.3f),
+            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
         }
     },
     new Ruoka

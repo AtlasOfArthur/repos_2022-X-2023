@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AterianKoontiForm));
             WelcomePanel = new Panel();
             CloseWelcomeBT = new Button();
             TervetuloaTextiLB = new Label();
@@ -72,6 +73,8 @@
             KategoriaCB = new ComboBox();
             LajiCB = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            RavintoarvojenYksikotMineralLB = new Label();
+            label1 = new Label();
             WelcomePanel.SuspendLayout();
             MittaritPanel.SuspendLayout();
             SuspendLayout();
@@ -82,10 +85,10 @@
             WelcomePanel.Controls.Add(CloseWelcomeBT);
             WelcomePanel.Controls.Add(TervetuloaTextiLB);
             WelcomePanel.Controls.Add(TervetuloaLB);
-            WelcomePanel.Location = new Point(1303, 624);
+            WelcomePanel.Location = new Point(1322, 143);
             WelcomePanel.Margin = new Padding(2, 3, 2, 3);
             WelcomePanel.Name = "WelcomePanel";
-            WelcomePanel.Size = new Size(1182, 553);
+            WelcomePanel.Size = new Size(1382, 931);
             WelcomePanel.TabIndex = 0;
             // 
             // CloseWelcomeBT
@@ -111,9 +114,9 @@
             TervetuloaTextiLB.AutoSize = true;
             TervetuloaTextiLB.Location = new Point(422, 141);
             TervetuloaTextiLB.Name = "TervetuloaTextiLB";
-            TervetuloaTextiLB.Size = new Size(321, 84);
+            TervetuloaTextiLB.Size = new Size(733, 336);
             TervetuloaTextiLB.TabIndex = 1;
-            TervetuloaTextiLB.Text = "Keksi tervetuloa teksti!\r\nEnemmän kuin nyt. tämä on vain..\r\nTesti teksti.";
+            TervetuloaTextiLB.Text = resources.GetString("TervetuloaTextiLB.Text");
             TervetuloaTextiLB.TextAlign = ContentAlignment.TopCenter;
             // 
             // TervetuloaLB
@@ -151,6 +154,8 @@
             // 
             // MittaritPanel
             // 
+            MittaritPanel.Controls.Add(label1);
+            MittaritPanel.Controls.Add(RavintoarvojenYksikotMineralLB);
             MittaritPanel.Controls.Add(B12ArvoLB);
             MittaritPanel.Controls.Add(B6ArvoLB);
             MittaritPanel.Controls.Add(B2ArvoLB);
@@ -373,11 +378,11 @@
             // 
             MineraaliOtsikkoLB.AutoSize = true;
             MineraaliOtsikkoLB.Font = new Font("OCR A Extended", 12F, FontStyle.Bold);
-            MineraaliOtsikkoLB.Location = new Point(16, 17);
+            MineraaliOtsikkoLB.Location = new Point(36, 17);
             MineraaliOtsikkoLB.Name = "MineraaliOtsikkoLB";
-            MineraaliOtsikkoLB.Size = new Size(205, 23);
+            MineraaliOtsikkoLB.Size = new Size(140, 23);
             MineraaliOtsikkoLB.TabIndex = 8;
-            MineraaliOtsikkoLB.Text = "Mineraalit (Mg)";
+            MineraaliOtsikkoLB.Text = "Mineraalit";
             MineraaliOtsikkoLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // VitamiinitLB
@@ -552,11 +557,34 @@
             flowLayoutPanel1.Size = new Size(433, 407);
             flowLayoutPanel1.TabIndex = 32;
             // 
+            // RavintoarvojenYksikotMineralLB
+            // 
+            RavintoarvojenYksikotMineralLB.AutoSize = true;
+            RavintoarvojenYksikotMineralLB.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RavintoarvojenYksikotMineralLB.Location = new Point(202, 73);
+            RavintoarvojenYksikotMineralLB.Name = "RavintoarvojenYksikotMineralLB";
+            RavintoarvojenYksikotMineralLB.Size = new Size(28, 289);
+            RavintoarvojenYksikotMineralLB.TabIndex = 28;
+            RavintoarvojenYksikotMineralLB.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n";
+            RavintoarvojenYksikotMineralLB.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(388, 71);
+            label1.Name = "label1";
+            label1.Size = new Size(28, 289);
+            label1.TabIndex = 29;
+            label1.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nµg\r\n";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // AterianKoontiForm
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1382, 778);
+            ClientSize = new Size(1382, 931);
+            Controls.Add(WelcomePanel);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(LajiCB);
             Controls.Add(KategoriaCB);
@@ -575,7 +603,6 @@
             Controls.Add(MittaritPanel);
             Controls.Add(KokoaAteriasiLB);
             Controls.Add(Otsikko1LB);
-            Controls.Add(WelcomePanel);
             Font = new Font("Script MT Bold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Margin = new Padding(5, 3, 5, 3);
             Name = "AterianKoontiForm";
@@ -635,5 +662,7 @@
         private ComboBox KategoriaCB;
         private ComboBox LajiCB;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
+        private Label RavintoarvojenYksikotMineralLB;
     }
 }
