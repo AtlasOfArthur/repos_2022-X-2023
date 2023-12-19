@@ -70,7 +70,7 @@
             KategoriaLB = new Label();
             AinesosaLB = new Label();
             KategoriaCB = new ComboBox();
-            AinesosaCB = new ComboBox();
+            LajiCB = new ComboBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             WelcomePanel.SuspendLayout();
             MittaritPanel.SuspendLayout();
@@ -536,14 +536,14 @@
             KategoriaCB.Size = new Size(243, 26);
             KategoriaCB.TabIndex = 30;
             // 
-            // AinesosaCB
+            // LajiCB
             // 
-            AinesosaCB.Font = new Font("OCR A Extended", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AinesosaCB.FormattingEnabled = true;
-            AinesosaCB.Location = new Point(285, 239);
-            AinesosaCB.Name = "AinesosaCB";
-            AinesosaCB.Size = new Size(184, 26);
-            AinesosaCB.TabIndex = 31;
+            LajiCB.Font = new Font("OCR A Extended", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LajiCB.FormattingEnabled = true;
+            LajiCB.Location = new Point(285, 239);
+            LajiCB.Name = "LajiCB";
+            LajiCB.Size = new Size(184, 26);
+            LajiCB.TabIndex = 31;
             // 
             // flowLayoutPanel1
             // 
@@ -558,7 +558,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1382, 778);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(AinesosaCB);
+            Controls.Add(LajiCB);
             Controls.Add(KategoriaCB);
             Controls.Add(AinesosaLB);
             Controls.Add(KategoriaLB);
@@ -633,7 +633,7 @@
         private Label KategoriaLB;
         private Label AinesosaLB;
         private ComboBox KategoriaCB;
-        private ComboBox AinesosaCB;
+        private ComboBox LajiCB;
         private FlowLayoutPanel flowLayoutPanel1;
     }
 }

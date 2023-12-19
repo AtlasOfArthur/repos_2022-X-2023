@@ -18,7 +18,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         {
             public string Kategoria { get; set; } = "";
             public string Laji { get; set; } = "";
-            public List<int[]> Aineet { get; set; } = new List<int[]>();
+            public List<(string Nimi, int Arvo)> Aineet { get; set; } = new List<(string Nimi, int Arvo)>();
         }
 
         private void RuoanKoontiForm_Load(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
 
 
 
-        List<Ruoka> ruokaLista = new List<Ruoka>
+List<Ruoka> ruokaLista = new List<Ruoka>
 {
 
     // Tyhjä kategoria
@@ -42,9 +42,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = " ",
         Laji = " ",
-        Aineet = new List<int[]>
+        Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Liha-kategoria
@@ -52,9 +56,39 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Liha",
         Laji = "Sika",
-        Aineet = new List<int[]>
+        Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27 }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+        }
+    },
+    new Ruoka
+    {
+        Kategoria = "Liha",
+        Laji = "Nauta",
+                Aineet = new List<(string Nimi, int Arvo)>
+        {
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+        }
+    },
+    new Ruoka
+    {
+        Kategoria = "Liha",
+        Laji = "Sika",
+                Aineet = new List<(string Nimi, int Arvo)>
+        {
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Kala-kategoria
@@ -62,10 +96,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Kala",
         Laji = "Lohi",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, }
-
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Marjat-kategoria
@@ -73,9 +110,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Marjat",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] {  }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Hedelmät-kategoria
@@ -83,9 +124,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Hedelmät",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] {  }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Juurekset-kategoria
@@ -93,9 +138,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Juurekset",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Vihannekset-kategoria
@@ -103,9 +152,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Vihannekset",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Pähkinät/Siemenet-kategoria
@@ -113,9 +166,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Pähkinät/Siemenet",
         Laji = " ",
-        Aineet = new List<int[]>
+        Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Viljat-kategoria
@@ -123,9 +180,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Viljat",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Yrtit-kategoria
@@ -133,9 +194,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Yrtit",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Sienet-kategoria
@@ -143,9 +208,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Sienet",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Sipulit-kategoria
@@ -153,9 +222,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Sipulit",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Rasvat-kategoria
@@ -163,9 +236,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Rasvat",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Maitotuotteet-kategoria
@@ -173,9 +250,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Maitotuotteet",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     },
     // Muut-kategoria
@@ -183,9 +264,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Muut",
         Laji = " ",
-        Aineet = new List<int[]>
+                Aineet = new List<(string Nimi, int Arvo)>
         {
-            new int[] { }
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
         }
     }
     // ... Muut kategoriat ja lajit
