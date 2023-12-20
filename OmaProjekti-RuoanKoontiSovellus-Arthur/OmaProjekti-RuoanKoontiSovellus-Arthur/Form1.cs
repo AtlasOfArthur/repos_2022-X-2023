@@ -51,9 +51,27 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
                 }
             }
         }
-        
+        private void LajiCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lis‰‰ valitun lajin ValinnatFlowLayoutPaneliin
+            string valittuLaji = LajiCB.SelectedItem.ToString();
 
-List<Ruoka> ruokaLista = new List<Ruoka>
+            // Lis‰t‰‰n uusi label ja poista button
+            Label uusiLabel = new Label();
+            uusiLabel.Text = valittuLaji;
+            uusiLabel.Font = new Font("Script MT Bold", 11);
+            Button uusiButton = new Button();
+            uusiButton.Text = "Poista";
+            uusiButton.Font = new Font(uusiButton.Font.FontFamily, 8, FontStyle.Bold);
+            uusiButton.Size = new Size(75, 26);
+
+            // Lis‰t‰‰n luotu Label FlowLayoutPaneliin
+            ValinnatFlowLayoutPanel.Controls.Add(uusiLabel);
+            // Lis‰t‰‰n myˆs poista button
+            ValinnatFlowLayoutPanel.Controls.Add(uusiButton);
+        }
+
+        List<Ruoka> ruokaLista = new List<Ruoka>
 {
     // Jos arvot 0.0f, ei ole silloin v‰ltt‰m‰tt‰ tiedossa
     // Tyhj‰ kategoria
@@ -97,7 +115,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Liha",
         Laji = "Kana",
-        Aineet = new List<(string Nimi, float Arvo)> 
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -299,7 +317,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
             ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
             ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 0.0f), ("Prot", 0.0f),
             ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
-        } 
+        }
     }
     // ... Muut kategoriat ja lajit
 };
@@ -324,5 +342,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
         {
             WelcomePanel.Visible = false;
         }
+
+
     }
 }

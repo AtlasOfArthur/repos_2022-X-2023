@@ -36,6 +36,8 @@
             Otsikko1LB = new Label();
             KokoaAteriasiLB = new Label();
             MittaritPanel = new Panel();
+            label1 = new Label();
+            RavintoarvojenYksikotMineralLB = new Label();
             B12ArvoLB = new Label();
             B6ArvoLB = new Label();
             B2ArvoLB = new Label();
@@ -72,9 +74,7 @@
             AinesosaLB = new Label();
             KategoriaCB = new ComboBox();
             LajiCB = new ComboBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            RavintoarvojenYksikotMineralLB = new Label();
-            label1 = new Label();
+            ValinnatFlowLayoutPanel = new FlowLayoutPanel();
             WelcomePanel.SuspendLayout();
             MittaritPanel.SuspendLayout();
             SuspendLayout();
@@ -182,6 +182,28 @@
             MittaritPanel.Name = "MittaritPanel";
             MittaritPanel.Size = new Size(428, 407);
             MittaritPanel.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(388, 71);
+            label1.Name = "label1";
+            label1.Size = new Size(28, 289);
+            label1.TabIndex = 29;
+            label1.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nµg\r\n";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // RavintoarvojenYksikotMineralLB
+            // 
+            RavintoarvojenYksikotMineralLB.AutoSize = true;
+            RavintoarvojenYksikotMineralLB.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RavintoarvojenYksikotMineralLB.Location = new Point(202, 73);
+            RavintoarvojenYksikotMineralLB.Name = "RavintoarvojenYksikotMineralLB";
+            RavintoarvojenYksikotMineralLB.Size = new Size(28, 289);
+            RavintoarvojenYksikotMineralLB.TabIndex = 28;
+            RavintoarvojenYksikotMineralLB.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n";
+            RavintoarvojenYksikotMineralLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // B12ArvoLB
             // 
@@ -549,35 +571,14 @@
             LajiCB.Name = "LajiCB";
             LajiCB.Size = new Size(184, 26);
             LajiCB.TabIndex = 31;
+            LajiCB.SelectedIndexChanged += LajiCB_SelectedIndexChanged;
             // 
-            // flowLayoutPanel1
+            // ValinnatFlowLayoutPanel
             // 
-            flowLayoutPanel1.Location = new Point(36, 300);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(433, 407);
-            flowLayoutPanel1.TabIndex = 32;
-            // 
-            // RavintoarvojenYksikotMineralLB
-            // 
-            RavintoarvojenYksikotMineralLB.AutoSize = true;
-            RavintoarvojenYksikotMineralLB.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RavintoarvojenYksikotMineralLB.Location = new Point(202, 73);
-            RavintoarvojenYksikotMineralLB.Name = "RavintoarvojenYksikotMineralLB";
-            RavintoarvojenYksikotMineralLB.Size = new Size(28, 289);
-            RavintoarvojenYksikotMineralLB.TabIndex = 28;
-            RavintoarvojenYksikotMineralLB.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n";
-            RavintoarvojenYksikotMineralLB.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("OCR A Extended", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(388, 71);
-            label1.Name = "label1";
-            label1.Size = new Size(28, 289);
-            label1.TabIndex = 29;
-            label1.Text = "mg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nmg\r\n\r\nµg\r\n";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            ValinnatFlowLayoutPanel.Location = new Point(36, 300);
+            ValinnatFlowLayoutPanel.Name = "ValinnatFlowLayoutPanel";
+            ValinnatFlowLayoutPanel.Size = new Size(433, 407);
+            ValinnatFlowLayoutPanel.TabIndex = 32;
             // 
             // AterianKoontiForm
             // 
@@ -585,7 +586,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1382, 931);
             Controls.Add(WelcomePanel);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(ValinnatFlowLayoutPanel);
             Controls.Add(LajiCB);
             Controls.Add(KategoriaCB);
             Controls.Add(AinesosaLB);
@@ -661,7 +662,7 @@
         private Label AinesosaLB;
         private ComboBox KategoriaCB;
         private ComboBox LajiCB;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel ValinnatFlowLayoutPanel;
         private Label label1;
         private Label RavintoarvojenYksikotMineralLB;
     }
