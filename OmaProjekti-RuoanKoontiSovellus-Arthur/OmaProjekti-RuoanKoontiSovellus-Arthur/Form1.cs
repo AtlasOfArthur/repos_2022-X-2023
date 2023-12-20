@@ -11,9 +11,9 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         public AterianKoontiForm()
         {
             InitializeComponent();
+            KategoriaCB.SelectedIndexChanged += KategoriaCB_ValittuKategoriaVaihdettu;
 
         }
-
         public class Ruoka
         {
             public string Kategoria { get; set; } = "";
@@ -27,12 +27,31 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             {
                 if (!string.IsNullOrWhiteSpace(ruoka.Kategoria) && !KategoriaCB.Items.Contains(ruoka.Kategoria))
                 {
-                    KategoriaCB.Items.Add(ruoka.Kategoria);
+                    KategoriaCB.Items.Add(ruoka.Kategoria); // Lis‰‰ Kategoria comboboksiin ruoka listassa olevat Kategoria t‰g‰tyt objektit
                 }
             }
         }
+        private void KategoriaCB_ValittuKategoriaVaihdettu(object sender, EventArgs e)
+        {
+            // Tyhjent‰‰ LajiCB
+            LajiCB.Items.Clear();
 
+            // Hakee valitun kategorian
+            string valittuKategoria = KategoriaCB.SelectedItem.ToString();
 
+            // Etsii ruoat, jotka kuuluvat valittuun kategoriaan
+            var valitutRuoat = ruokaLista.Where(ruoka => ruoka.Kategoria == valittuKategoria);
+
+            // Lis‰‰ ruokien lajit LajiCB:hen
+            foreach (var ruoka in valitutRuoat)
+            {
+                if (!string.IsNullOrWhiteSpace(ruoka.Laji) && !LajiCB.Items.Contains(ruoka.Laji))
+                {
+                    LajiCB.Items.Add(ruoka.Laji);
+                }
+            }
+        }
+        
 
 List<Ruoka> ruokaLista = new List<Ruoka>
 {
@@ -44,14 +63,9 @@ List<Ruoka> ruokaLista = new List<Ruoka>
         Laji = " ",
         Aineet = new List<(string Nimi, float Arvo)>
         {
-            ("Natrium", 0.0f), ("Potassium", 0.0f), ("Kalsium", 0.0f), ("Fosfori", 0.0f), ("Magnesuum", 0.0f),
-            ("Rauta", 0.0f), ("Sinkki", 0.0f), ("Jodi", 0.0f), ("Kupari", 0.0f), ("VitA", 1.0f),
-            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
-            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 0.0f), ("Prot", 0.0f),
-            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
+            // Tyhj‰ valinta KategoriaCB ensimm‰isess‰ indeksiss‰
         }
     },
-    // Liha-kategoria
     new Ruoka
     {
         Kategoria = "Liha",
@@ -70,7 +84,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Liha",
         Laji = "Nauta", // "Naudanliha, lyhyt ulkofilee, t-bone pihvi..." L‰hde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746763/nutrients
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {   // Tarkista viel‰ arvot
             ("Natrium", 67.0f), ("Potassium", 283.0f), ("Kalsium", 19.0f), ("Fosfori", 211.0f), ("Magnesuum", 0.003f),
             ("Rauta", 3.53f), ("Sinkki", 4.69f), ("Jodi", 0.0f), ("Kupari", 0.078f), ("VitA", 0.0f),
@@ -83,7 +97,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Liha",
         Laji = "Kana",
-                Aineet = new List<(string Nimi, float Arvo)> 
+        Aineet = new List<(string Nimi, float Arvo)> 
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -97,7 +111,20 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Kala",
         Laji = "Lohi",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
+        {
+            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
+            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
+            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
+            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
+            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+        }
+    },
+       new Ruoka
+    {
+        Kategoria = "Kala",
+        Laji = "Tonnikala",
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -111,7 +138,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Marjat",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -125,7 +152,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Hedelm‰t",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -139,7 +166,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Juurekset",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -153,7 +180,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Vihannekset",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -181,7 +208,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Viljat",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -195,7 +222,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Yrtit",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -209,7 +236,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Sienet",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -223,7 +250,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Sipulit",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -237,7 +264,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Rasvat",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -251,7 +278,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Maitotuotteet",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
             ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
@@ -265,7 +292,7 @@ List<Ruoka> ruokaLista = new List<Ruoka>
     {
         Kategoria = "Muut",
         Laji = " ",
-                Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new List<(string Nimi, float Arvo)>
         {
             ("Natrium", 0.0f), ("Potassium", 0.0f), ("Kalsium", 0.0f), ("Fosfori", 0.0f), ("Magnesuum", 0.0f),
             ("Rauta", 0.0f), ("Sinkki", 0.0f), ("Jodi", 0.0f), ("Kupari", 0.0f), ("VitA", 1.0f),
