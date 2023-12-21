@@ -56,7 +56,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             // Lisää valitun lajin ValinnatFlowLayoutPaneliin
             string valittuLaji = LajiCB.SelectedItem.ToString();
 
-            // Lisätään uusi label ja poista button
+            // Lisää uuden labelin ja kullekkin luodulle Labelille myös poista buttonin
             Label uusiLabel = new Label();
             uusiLabel.Text = valittuLaji;
             uusiLabel.Font = new Font("Script MT Bold", 11);
@@ -65,10 +65,27 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             uusiButton.Font = new Font(uusiButton.Font.FontFamily, 8, FontStyle.Bold);
             uusiButton.Size = new Size(75, 26);
 
-            // Lisätään luotu Label FlowLayoutPaneliin
+            // Lisätään luotu Label ja Button FlowLayoutPaneliin
             ValinnatFlowLayoutPanel.Controls.Add(uusiLabel);
-            // Lisätään myös poista button
             ValinnatFlowLayoutPanel.Controls.Add(uusiButton);
+
+            // Lisätään poista buttonin ja labelin poiston tapahtumankäsittelijä suoraan tähän
+            uusiButton.Click += (s, args) =>
+            {
+                if (s is Button poistaButton)
+                {
+                    int indeksi = ValinnatFlowLayoutPanel.Controls.IndexOf(poistaButton);
+
+                    if (indeksi != -1)
+                    {
+                        // Poistaa Labelin ja sen jälkeen myös Buttonin
+                        ValinnatFlowLayoutPanel.Controls.RemoveAt(indeksi - 1); // Label
+                        ValinnatFlowLayoutPanel.Controls.RemoveAt(indeksi - 1); // Button
+                    }
+                }
+            };
+
+
         }
 
         List<Ruoka> ruokaLista = new List<Ruoka>
