@@ -18,7 +18,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         {
             public string Kategoria { get; set; } = "";
             public string Laji { get; set; } = "";
-            public List<(string Nimi, float Arvo)> Aineet { get; set; } = new List<(string Nimi, float Arvo)>();
+            public Dictionary<string, float > Aineet { get; set; } = new Dictionary<string, float>();
         }
 
         private void RuoanKoontiForm_Load(object sender, EventArgs e)
@@ -33,6 +33,8 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         }
         private void KategoriaCB_ValittuKategoriaVaihdettu(object sender, EventArgs e)
         {
+            //---------------------------Kategoriat comboboksiin----------------------------//
+
             // Tyhjentää LajiCB
             LajiCB.Items.Clear();
 
@@ -53,12 +55,14 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         }
         private void LajiCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lisää valitun lajin ValinnatFlowLayoutPaneliin
-            string valittuLaji = LajiCB.SelectedItem.ToString();
+            //--------------Ruokalajit kategorioista toiseen comboboksiin-------------------//
+
+            // Lisää LajiiCB:stä valitun ruokalajin ValinnatFlowLayoutPaneliin
+            string valittuRuokaLaji = LajiCB.SelectedItem.ToString();
 
             // Lisää uuden labelin ja kullekkin luodulle Labelille myös poista buttonin
             Label uusiLabel = new Label();
-            uusiLabel.Text = valittuLaji;
+            uusiLabel.Text = valittuRuokaLaji;
             uusiLabel.Font = new Font("Script MT Bold", 11);
             Button uusiButton = new Button();
             uusiButton.Text = "Poista";
@@ -68,6 +72,17 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             // Lisätään luotu Label ja Button FlowLayoutPaneliin
             ValinnatFlowLayoutPanel.Controls.Add(uusiLabel);
             ValinnatFlowLayoutPanel.Controls.Add(uusiButton);
+            // Käynnistää automaattisen vierityksen kun ValinnatFlowLayoutPanel tulee täyteen
+            ValinnatFlowLayoutPanel.AutoScroll = true;
+
+
+            //--------------Arvot FlowLayoutin tavaroilta omille labeleillensa--------------//
+
+            // Etsii ruoan, joka vastaa valittua ruokalajia
+            var valittuRuoka = ruokaLista.FirstOrDefault(ruoka => ruoka.Laji == valittuRuokaLaji);
+
+
+            //---------------------Button ja Label FlowLayout paneliin----------------------//
 
             // Lisätään poista buttonin ja labelin poiston tapahtumankäsittelijä suoraan tähän
             uusiButton.Click += (s, args) =>
@@ -85,7 +100,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
                 }
             };
 
-
+            //------------------------------------------------------------------------------//
         }
 
         List<Ruoka> ruokaLista = new List<Ruoka>
@@ -96,7 +111,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = " ",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
             // Tyhjä valinta KategoriaCB ensimmäisessä indeksissä
         }
@@ -105,15 +120,35 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Liha",
         Laji = "Sika", // "Kinkku, viipaloitu, ravintola" Lähde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746952/nutrients
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {   // Arvot pitää päivittää, koska todennäköisesti tiedot maustetusta lihasta !!!! (Natrium korkea)
-            ("Natrium", 1030.0f), ("Potassium", 484.0f), ("Kalsium", 6.0f), ("Fosfori", 424.0f), ("Magnesuum", 0.015f),
-            ("Rauta", 0.86f), ("Sinkki", 1.76f), ("Jodi", 0.0f), ("Kupari", 0.041f), ("VitA", 10),
-            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
-            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 216.0f), ("Prot", 19.6f),
-            ("HiHy", 2.36f), ("Sok", 2.2f), ("RasvaP", 2.275f), ("RasvaK", 1.25f), ("Kuidut", 0.0f),
+            {"Natrium", 1030.0f},
+            {"Potassium", 484.0f},
+            {"Kalsium", 6.0f},
+            {"Fosfori", 424.0f},
+            {"Magnesuum", 0.015f},
+            {"Rauta", 0.86f},
+            {"Sinkki", 1.76f},
+            {"Jodi", 0.0f},
+            {"Kupari", 0.041f},
+            {"VitA", 10},
+            {"VitC", 0.0f},
+            {"VitD", 0.0f},
+            {"VitE", 0.0f},
+            {"VitK", 0.0f},
+            {"VitB1", 0.0f},
+            {"VitB2", 0.0f},
+            {"VitB6", 0.0f},
+            {"VitB12", 0.0f},
+            {"Kcal", 216.0f},
+            {"Prot", 19.6f},
+            {"HiHy", 2.36f},
+            {"Sok", 2.2f},
+            {"RasvaP", 2.275f},
+            {"RasvaK", 1.25f},
+            {"Kuidut", 0.0f},
         }// Note! Fatty acids, total monounsaturated + Fatty acids, total polyunsaturated = RasvaP
-                // Tietoa vitamiineista ei löytynyt
+          // Tietoa vitamiineista ei löytynyt
     },
     new Ruoka
     {
