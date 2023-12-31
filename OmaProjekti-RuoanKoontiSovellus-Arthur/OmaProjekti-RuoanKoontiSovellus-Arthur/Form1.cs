@@ -6,13 +6,21 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
 
     public partial class AterianKoontiForm : Form
     {
-
-
+        public Dictionary<string, Dictionary<string, float>> LaskutoimitusDictionary { get; set; } = new Dictionary<string, Dictionary<string, float>>();
+        // Edell‰ on alustus kaksiulotteiselle Dictionarylle laskutoimitusta varten (Ei mit‰‰n hajua miten t‰m‰ pit‰isi kirjoittaa)
+        public Dictionary<string, float> VastausDictionary { get; set; } = new Dictionary<string, float>();
+        // Edell‰ on alustus yksiulotteiselle dictionarylle johon vastaus tallennetaan ja sielt‰ se siirret‰‰n labeleille (Tai se on ainakin ajatu
+        
         public AterianKoontiForm()
         {
             InitializeComponent();
             KategoriaCB.SelectedIndexChanged += KategoriaCB_ValittuKategoriaVaihdettu;
 
+            // Luo tapahtumank‰sittelij‰ ValinnatFlowLayoutPanelin ControlRemoved-tapahtumalle
+            ValinnatFlowLayoutPanel.ControlRemoved += (sender, e) =>
+            {
+             
+            };
         }
         public class Ruoka
         {
@@ -96,12 +104,55 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
                         // Poistaa Labelin ja sen j‰lkeen myˆs Buttonin
                         ValinnatFlowLayoutPanel.Controls.RemoveAt(indeksi - 1); // Label
                         ValinnatFlowLayoutPanel.Controls.RemoveAt(indeksi - 1); // Button
+
+                        // Tyhjennet‰‰n LaskutoimitusDictionary jotta tulos s‰ilyy oikeana
+                        LaskutoimitusDictionary.Clear();
+                        // P‰ivitet‰‰n KaikkienAineidenArvot poiston j‰lkeen
+                        LaskeLisattujenAineidenArvot();
                     }
                 }
             };
 
-            //------------------------------------------------------------------------------//
+            // Lis‰t‰‰n aineet LaskutoimitusDictionaryyn
+            Lis‰‰AineLaskutoimitusDictionaryyn(valittuRuoka.Aineet);
+
+            // P‰ivitet‰‰n KaikkienAineidenArvot lis‰yksen j‰lkeen
+            LaskeLisattujenAineidenArvot();
+
+            // P‰ivitet‰‰n labelit
+            NaytaKaikkienAineidenArvotLabeleilla(); // KESKEN
         }
+
+        //---------------------LaskutoimitusDictionary aineiden lis‰ys----------------------//
+        private void Lis‰‰AineLaskutoimitusDictionaryyn(Dictionary<string, float> aineet)
+        {
+            if (aineet != null)
+            {
+                foreach (var aine in aineet)
+                {
+                    if (!LaskutoimitusDictionary.ContainsKey(aine.Key))
+                    {
+                        LaskutoimitusDictionary.Add(aine.Key, new Dictionary<string, float>());
+                    }
+
+                    LaskutoimitusDictionary[aine.Key][aine.Key] = aine.Value;
+                }
+            }
+        }
+
+        //----------------LaskutoimitusDictionary aineiden arvojen p‰ivitys-----------------//
+        private void LaskeLisattujenAineidenArvot()
+        {
+            VastausDictionary.Clear();
+
+            foreach (var aine in LaskutoimitusDictionary)
+            {
+                VastausDictionary[aine.Key] = aine.Value.Values.Sum();
+            }
+        }
+
+        //------------------------------------------------------------------------------//
+
 
         List<Ruoka> ruokaLista = new List<Ruoka>
 {
@@ -122,15 +173,15 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         Laji = "Sika", // "Kinkku, viipaloitu, ravintola" L‰hde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746952/nutrients
         Aineet = new Dictionary<string, float>
         {   // Arvot pit‰‰ p‰ivitt‰‰, koska todenn‰kˆisesti tiedot maustetusta lihasta !!!! (Natrium korkea)
-            {"Natrium", 1030.0f},
-            {"Potassium", 484.0f},
-            {"Kalsium", 6.0f},
-            {"Fosfori", 424.0f},
-            {"Magnesuum", 0.015f},
-            {"Rauta", 0.86f},
-            {"Sinkki", 1.76f},
-            {"Jodi", 0.0f},
-            {"Kupari", 0.041f},
+            {"Na", 1030.0f},
+            {"K", 484.0f},
+            {"Ca", 6.0f},
+            {"P", 424.0f},
+            {"Mg", 0.015f},
+            {"Fe", 0.86f},
+            {"Zn", 1.76f},
+            {"I", 0.0f},
+            {"Cu", 0.041f},
             {"VitA", 10},
             {"VitC", 0.0f},
             {"VitD", 0.0f},
@@ -140,13 +191,13 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             {"VitB2", 0.0f},
             {"VitB6", 0.0f},
             {"VitB12", 0.0f},
-            {"Kcal", 216.0f},
-            {"Prot", 19.6f},
+            {"cal", 216.0f},
+            {"Pro", 19.6f},
             {"HiHy", 2.36f},
-            {"Sok", 2.2f},
-            {"RasvaP", 2.275f},
-            {"RasvaK", 1.25f},
-            {"Kuidut", 0.0f},
+            {"JoSo", 2.2f},
+            {"Pra", 2.275f},
+            {"Kra", 1.25f},
+            {"Kui", 0.0f},
         }// Note! Fatty acids, total monounsaturated + Fatty acids, total polyunsaturated = RasvaP
           // Tietoa vitamiineista ei lˆytynyt
     },
@@ -154,26 +205,65 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Liha",
         Laji = "Nauta", // "Naudanliha, lyhyt ulkofilee, t-bone pihvi..." L‰hde: https://fdc.nal.usda.gov/fdc-app.html#/food-details/746763/nutrients
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {   // Tarkista viel‰ arvot
-            ("Natrium", 67.0f), ("Potassium", 283.0f), ("Kalsium", 19.0f), ("Fosfori", 211.0f), ("Magnesuum", 0.003f),
-            ("Rauta", 3.53f), ("Sinkki", 4.69f), ("Jodi", 0.0f), ("Kupari", 0.078f), ("VitA", 0.0f),
-            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
-            ("VitB2", 0.0f), ("VitB6", 0.75f), ("VitB12", 1.88f)/*(µg)*/, ("Kcal", 219.0f), ("Prot", 27.3f),
-            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
+            { "Na", 67.0f },
+            { "K", 283.0f },
+            { "Ca", 19.0f },
+            { "P", 211.0f},
+            { "Fe", 3.53f },
+            {"Zn", 4.69f },
+            { "I", 0.0f },
+            { "Cu", 0.078f },
+            { "VitA", 0.0f }, 
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.75f },
+            { "VitB12", 1.88f },//(µg)
+            { "cal", 219.0f },
+            { "Prot", 27.3f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     new Ruoka
     {
         Kategoria = "Liha",
         Laji = "Kana",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 19.6f),
-            ("HiHy",  126), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f }, 
+            { "Zn", 0.0f }, 
+            { "I", 0.0f }, 
+            { "Cu", 0.0f }, 
+            { "VitA", 0.0f },
+            { "VitC", 0.0f }, 
+            { "VitD", 0.0f }, 
+            { "VitE", 0.0f }, 
+            { "VitK", 0.0f }, 
+            { "VitB1", 0.0f }, 
+            { "VitB2", 0.0f }, 
+            { "VitB6", 0.0f }, 
+            { "VitB12", 0.0f }, 
+            { "cal", 0.0f }, 
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f }, 
+            { "JoSo", 0.0f }, 
+            { "Pra", 0.0f }, 
+            { "Kra", 0.0f }, 
+            { "Kui", 0.0f },
         }
     },
     // Kala-kategoria
@@ -181,26 +271,66 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Kala",
         Laji = "Lohi",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
-       new Ruoka
+        new Ruoka
     {
         Kategoria = "Kala",
         Laji = "Tonnikala",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Marjat-kategoria
@@ -208,13 +338,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Marjat",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Hedelm‰t-kategoria
@@ -222,13 +372,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Hedelm‰t",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Juurekset-kategoria
@@ -236,13 +406,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Juurekset",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+             { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Vihannekset-kategoria
@@ -250,13 +440,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Vihannekset",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // P‰hkin‰t/Siemenet-kategoria
@@ -264,13 +474,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "P‰hkin‰t/Siemenet",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Viljat-kategoria
@@ -278,13 +508,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Viljat",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Yrtit-kategoria
@@ -292,13 +542,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Yrtit",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+        Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+             { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Sienet-kategoria
@@ -306,13 +576,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Sienet",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+               Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Sipulit-kategoria
@@ -320,13 +610,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Sipulit",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+               Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Rasvat-kategoria
@@ -334,13 +644,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Rasvat",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+               Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Maitotuotteet-kategoria
@@ -348,13 +678,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Maitotuotteet",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+               Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 1), ("Potassium", 2), ("Kalsium", 3), ("Fosfori", 4), ("Magnesuum", 5),
-            ("Rauta", 6), ("Sinkki", 7), ("Jodi", 8), ("Kupari", 9), ("VitA", 10),
-            ("VitC", 11), ("VitD", 12), ("VitE", 13), ("VitK", 14), ("VitB1", 15),
-            ("VitB2", 16), ("VitB6", 17), ("VitB12", 18), ("Kcal", 19), ("Prot", 20),
-            ("HiHy", 21), ("Sok", 22), ("RasvaP", 23), ("RasvaK", 24), ("Kuidut", 25),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     },
     // Muut-kategoria
@@ -362,13 +712,33 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
     {
         Kategoria = "Muut",
         Laji = " ",
-        Aineet = new List<(string Nimi, float Arvo)>
+               Aineet = new Dictionary<string, float>
         {
-            ("Natrium", 0.0f), ("Potassium", 0.0f), ("Kalsium", 0.0f), ("Fosfori", 0.0f), ("Magnesuum", 0.0f),
-            ("Rauta", 0.0f), ("Sinkki", 0.0f), ("Jodi", 0.0f), ("Kupari", 0.0f), ("VitA", 1.0f),
-            ("VitC", 0.0f), ("VitD", 0.0f), ("VitE", 0.0f), ("VitK", 0.0f), ("VitB1", 0.0f),
-            ("VitB2", 0.0f), ("VitB6", 0.0f), ("VitB12", 0.0f), ("Kcal", 0.0f), ("Prot", 0.0f),
-            ("HiHy", 0.0f), ("Sok", 0.0f), ("RasvaP", 0.0f), ("RasvaK", 0.0f), ("Kuidut", 0.0f),
+            { "Na", 0.0f },
+            { "K", 0.0f },
+            { "Ca", 0.0f },
+            { "P", 0.0f },
+            { "Mg", 0.0f },
+            { "Fe", 0.0f },
+            { "Zn", 0.0f },
+            { "I", 0.0f },
+            { "Cu", 0.0f },
+            { "VitA", 0.0f },
+            { "VitC", 0.0f },
+            { "VitD", 0.0f },
+            { "VitE", 0.0f },
+            { "VitK", 0.0f },
+            { "VitB1", 0.0f },
+            { "VitB2", 0.0f },
+            { "VitB6", 0.0f },
+            { "VitB12", 0.0f },
+            { "cal", 0.0f },
+            { "Pro", 0.0f },
+            { "HiHy", 0.0f },
+            { "JoSo", 0.0f },
+            { "Pra", 0.0f },
+            { "Kra", 0.0f },
+            { "Kui", 0.0f },
         }
     }
     // ... Muut kategoriat ja lajit

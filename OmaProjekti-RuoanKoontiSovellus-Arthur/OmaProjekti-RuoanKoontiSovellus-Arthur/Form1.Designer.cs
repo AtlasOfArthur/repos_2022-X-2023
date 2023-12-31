@@ -234,9 +234,9 @@
             B12ArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             B12ArvoLB.Location = new Point(320, 351);
             B12ArvoLB.Name = "B12ArvoLB";
-            B12ArvoLB.Size = new Size(21, 19);
+            B12ArvoLB.Size = new Size(81, 19);
             B12ArvoLB.TabIndex = 27;
-            B12ArvoLB.Text = "0";
+            B12ArvoLB.Text = "VitB12";
             // 
             // B6ArvoLB
             // 
@@ -244,9 +244,9 @@
             B6ArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             B6ArvoLB.Location = new Point(320, 317);
             B6ArvoLB.Name = "B6ArvoLB";
-            B6ArvoLB.Size = new Size(21, 19);
+            B6ArvoLB.Size = new Size(69, 19);
             B6ArvoLB.TabIndex = 26;
-            B6ArvoLB.Text = "0";
+            B6ArvoLB.Text = "VitB6";
             // 
             // B2ArvoLB
             // 
@@ -254,9 +254,9 @@
             B2ArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             B2ArvoLB.Location = new Point(320, 283);
             B2ArvoLB.Name = "B2ArvoLB";
-            B2ArvoLB.Size = new Size(21, 19);
+            B2ArvoLB.Size = new Size(69, 19);
             B2ArvoLB.TabIndex = 25;
-            B2ArvoLB.Text = "0";
+            B2ArvoLB.Text = "VitB2";
             // 
             // B1ArvoLB
             // 
@@ -264,9 +264,9 @@
             B1ArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             B1ArvoLB.Location = new Point(320, 249);
             B1ArvoLB.Name = "B1ArvoLB";
-            B1ArvoLB.Size = new Size(21, 19);
+            B1ArvoLB.Size = new Size(69, 19);
             B1ArvoLB.TabIndex = 24;
-            B1ArvoLB.Text = "0";
+            B1ArvoLB.Text = "VitB1";
             // 
             // KuidutLB
             // 
@@ -274,9 +274,9 @@
             KuidutLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KuidutLB.Location = new Point(674, 309);
             KuidutLB.Name = "KuidutLB";
-            KuidutLB.Size = new Size(21, 19);
+            KuidutLB.Size = new Size(45, 19);
             KuidutLB.TabIndex = 13;
-            KuidutLB.Text = "0";
+            KuidutLB.Text = "Kui";
             // 
             // KArvoLB
             // 
@@ -284,9 +284,9 @@
             KArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KArvoLB.Location = new Point(320, 215);
             KArvoLB.Name = "KArvoLB";
-            KArvoLB.Size = new Size(21, 19);
+            KArvoLB.Size = new Size(57, 19);
             KArvoLB.TabIndex = 23;
-            KArvoLB.Text = "0";
+            KArvoLB.Text = "VitK";
             // 
             // PRasvaLB
             // 
@@ -294,9 +294,9 @@
             PRasvaLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PRasvaLB.Location = new Point(674, 233);
             PRasvaLB.Name = "PRasvaLB";
-            PRasvaLB.Size = new Size(21, 19);
+            PRasvaLB.Size = new Size(45, 19);
             PRasvaLB.TabIndex = 12;
-            PRasvaLB.Text = "0";
+            PRasvaLB.Text = "Pra";
             // 
             // EArvoLB
             // 
@@ -304,9 +304,9 @@
             EArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             EArvoLB.Location = new Point(320, 181);
             EArvoLB.Name = "EArvoLB";
-            EArvoLB.Size = new Size(21, 19);
+            EArvoLB.Size = new Size(57, 19);
             EArvoLB.TabIndex = 22;
-            EArvoLB.Text = "0";
+            EArvoLB.Text = "VitE";
             // 
             // KRasvaLB
             // 
@@ -314,9 +314,9 @@
             KRasvaLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KRasvaLB.Location = new Point(674, 271);
             KRasvaLB.Name = "KRasvaLB";
-            KRasvaLB.Size = new Size(21, 19);
+            KRasvaLB.Size = new Size(45, 19);
             KRasvaLB.TabIndex = 11;
-            KRasvaLB.Text = "0";
+            KRasvaLB.Text = "Kra";
             // 
             // DArvoLB
             // 
@@ -324,9 +324,9 @@
             DArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DArvoLB.Location = new Point(320, 147);
             DArvoLB.Name = "DArvoLB";
-            DArvoLB.Size = new Size(21, 19);
+            DArvoLB.Size = new Size(57, 19);
             DArvoLB.TabIndex = 21;
-            DArvoLB.Text = "0";
+            DArvoLB.Text = "VitD";
             // 
             // SokeriArvoLB
             // 
@@ -334,9 +334,9 @@
             SokeriArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SokeriArvoLB.Location = new Point(674, 195);
             SokeriArvoLB.Name = "SokeriArvoLB";
-            SokeriArvoLB.Size = new Size(21, 19);
+            SokeriArvoLB.Size = new Size(57, 19);
             SokeriArvoLB.TabIndex = 10;
-            SokeriArvoLB.Text = "0";
+            SokeriArvoLB.Text = "JoSo";
             // 
             // CArvoLB
             // 
@@ -344,9 +344,9 @@
             CArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CArvoLB.Location = new Point(320, 113);
             CArvoLB.Name = "CArvoLB";
-            CArvoLB.Size = new Size(21, 19);
+            CArvoLB.Size = new Size(57, 19);
             CArvoLB.TabIndex = 20;
-            CArvoLB.Text = "0";
+            CArvoLB.Text = "VitC";
             // 
             // ProteinArvoLB
             // 
@@ -354,9 +354,9 @@
             ProteinArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ProteinArvoLB.Location = new Point(674, 119);
             ProteinArvoLB.Name = "ProteinArvoLB";
-            ProteinArvoLB.Size = new Size(21, 19);
+            ProteinArvoLB.Size = new Size(45, 19);
             ProteinArvoLB.TabIndex = 9;
-            ProteinArvoLB.Text = "0";
+            ProteinArvoLB.Text = "Pro";
             // 
             // AArvoLB
             // 
@@ -364,9 +364,9 @@
             AArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AArvoLB.Location = new Point(320, 79);
             AArvoLB.Name = "AArvoLB";
-            AArvoLB.Size = new Size(21, 19);
+            AArvoLB.Size = new Size(57, 19);
             AArvoLB.TabIndex = 19;
-            AArvoLB.Text = "0";
+            AArvoLB.Text = "VitA";
             // 
             // HiilaritArvoLB
             // 
@@ -374,9 +374,9 @@
             HiilaritArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             HiilaritArvoLB.Location = new Point(674, 157);
             HiilaritArvoLB.Name = "HiilaritArvoLB";
-            HiilaritArvoLB.Size = new Size(21, 19);
+            HiilaritArvoLB.Size = new Size(57, 19);
             HiilaritArvoLB.TabIndex = 8;
-            HiilaritArvoLB.Text = "0";
+            HiilaritArvoLB.Text = "HiHy";
             // 
             // KupariArvoLB
             // 
@@ -384,9 +384,9 @@
             KupariArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KupariArvoLB.Location = new Point(134, 351);
             KupariArvoLB.Name = "KupariArvoLB";
-            KupariArvoLB.Size = new Size(21, 19);
+            KupariArvoLB.Size = new Size(33, 19);
             KupariArvoLB.TabIndex = 18;
-            KupariArvoLB.Text = "0";
+            KupariArvoLB.Text = "Cu";
             // 
             // RavintoarvojenYksikotLB
             // 
@@ -407,7 +407,7 @@
             JodiArvoLB.Name = "JodiArvoLB";
             JodiArvoLB.Size = new Size(21, 19);
             JodiArvoLB.TabIndex = 17;
-            JodiArvoLB.Text = "0";
+            JodiArvoLB.Text = "I";
             // 
             // KCalArvoLB
             // 
@@ -415,9 +415,9 @@
             KCalArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KCalArvoLB.Location = new Point(674, 81);
             KCalArvoLB.Name = "KCalArvoLB";
-            KCalArvoLB.Size = new Size(21, 19);
+            KCalArvoLB.Size = new Size(45, 19);
             KCalArvoLB.TabIndex = 6;
-            KCalArvoLB.Text = "0";
+            KCalArvoLB.Text = "cal";
             // 
             // SinkkiArvoLB
             // 
@@ -425,9 +425,9 @@
             SinkkiArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SinkkiArvoLB.Location = new Point(134, 283);
             SinkkiArvoLB.Name = "SinkkiArvoLB";
-            SinkkiArvoLB.Size = new Size(21, 19);
+            SinkkiArvoLB.Size = new Size(33, 19);
             SinkkiArvoLB.TabIndex = 16;
-            SinkkiArvoLB.Text = "0";
+            SinkkiArvoLB.Text = "Zn";
             // 
             // RavintosisältoLB
             // 
@@ -446,9 +446,9 @@
             RautaArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RautaArvoLB.Location = new Point(134, 249);
             RautaArvoLB.Name = "RautaArvoLB";
-            RautaArvoLB.Size = new Size(21, 19);
+            RautaArvoLB.Size = new Size(33, 19);
             RautaArvoLB.TabIndex = 15;
-            RautaArvoLB.Text = "0";
+            RautaArvoLB.Text = "Fe";
             // 
             // MagnesiumArvoLB
             // 
@@ -456,9 +456,9 @@
             MagnesiumArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MagnesiumArvoLB.Location = new Point(134, 215);
             MagnesiumArvoLB.Name = "MagnesiumArvoLB";
-            MagnesiumArvoLB.Size = new Size(21, 19);
+            MagnesiumArvoLB.Size = new Size(33, 19);
             MagnesiumArvoLB.TabIndex = 14;
-            MagnesiumArvoLB.Text = "0";
+            MagnesiumArvoLB.Text = "Mg";
             // 
             // FosforiArvoLB
             // 
@@ -468,7 +468,7 @@
             FosforiArvoLB.Name = "FosforiArvoLB";
             FosforiArvoLB.Size = new Size(21, 19);
             FosforiArvoLB.TabIndex = 13;
-            FosforiArvoLB.Text = "0";
+            FosforiArvoLB.Text = "P";
             // 
             // KaliumArvoLB
             // 
@@ -476,9 +476,9 @@
             KaliumArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             KaliumArvoLB.Location = new Point(134, 147);
             KaliumArvoLB.Name = "KaliumArvoLB";
-            KaliumArvoLB.Size = new Size(21, 19);
+            KaliumArvoLB.Size = new Size(33, 19);
             KaliumArvoLB.TabIndex = 12;
-            KaliumArvoLB.Text = "0";
+            KaliumArvoLB.Text = "Ca";
             // 
             // PotassiumArvoLB
             // 
@@ -488,7 +488,7 @@
             PotassiumArvoLB.Name = "PotassiumArvoLB";
             PotassiumArvoLB.Size = new Size(21, 19);
             PotassiumArvoLB.TabIndex = 11;
-            PotassiumArvoLB.Text = "0";
+            PotassiumArvoLB.Text = "K";
             // 
             // NatriumArvoLB
             // 
@@ -496,9 +496,9 @@
             NatriumArvoLB.Font = new Font("OCR A Extended", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NatriumArvoLB.Location = new Point(134, 79);
             NatriumArvoLB.Name = "NatriumArvoLB";
-            NatriumArvoLB.Size = new Size(21, 19);
+            NatriumArvoLB.Size = new Size(33, 19);
             NatriumArvoLB.TabIndex = 10;
-            NatriumArvoLB.Text = "0";
+            NatriumArvoLB.Text = "Na";
             // 
             // VitamiiniOtsikkoLB
             // 
@@ -541,7 +541,7 @@
             MineraalitLB.Name = "MineraalitLB";
             MineraalitLB.Size = new Size(108, 289);
             MineraalitLB.TabIndex = 6;
-            MineraalitLB.Text = "Natrium:\r\n\r\nPotassium:\r\n\r\nKalium:\r\n\r\nFosfori:\r\n\r\nMagnesium:\r\n\r\nRauta:\r\n\r\nSinkki:\r\n\r\nJodi:\r\n\r\nKupari:";
+            MineraalitLB.Text = "Natrium:\r\n\r\nPotassium:\r\n\r\nKalsium:\r\n\r\nFosfori:\r\n\r\nMagnesium:\r\n\r\nRauta:\r\n\r\nSinkki:\r\n\r\nJodi:\r\n\r\nKupari:";
             MineraalitLB.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // MittaritLB
