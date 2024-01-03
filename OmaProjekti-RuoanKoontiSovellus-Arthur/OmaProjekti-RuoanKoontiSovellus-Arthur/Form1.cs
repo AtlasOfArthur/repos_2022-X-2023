@@ -124,11 +124,11 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         }
 
         //---------------------LaskutoimitusDictionary aineiden lis‰ys----------------------//
-        private void Lis‰‰AineLaskutoimitusDictionaryyn(Dictionary<string, float> aineet)
+        private void Lis‰‰AineLaskutoimitusDictionaryyn(Dictionary<string, float> Aineet)
         {
-            if (aineet != null)
+            if (Aineet != null)
             {
-                foreach (var aine in aineet)
+                foreach (var aine in Aineet)
                 {
                     if (!LaskutoimitusDictionary.ContainsKey(aine.Key))
                     {
@@ -148,13 +148,21 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
             foreach (var aine in LaskutoimitusDictionary)
             {
                 // Tyypittele jokainen kohde `Dictionary<string, float>`-objektiksi
-                var LaskutoimitusDictionary = (Dictionary<string, float>)aine.Value;
+                var aineDictionary = (Dictionary<string, float>)aine.Value;
 
-                // Tyypittele `Name`-ominaisuus `string`-tyypiksi
-                foreach (var aineenNimi in LaskutoimitusDictionary.Keys)
+                // K‰y l‰pi kaikki aineet ja laske arvot yhteen VastausDictionaryss‰
+                foreach (var aineenNimi in aineDictionary.Keys)
                 {
-                    // Lis‰‰ `Value`-arvo `VastausDictionary`yn
-                    VastausDictionary[aineenNimi] = LaskutoimitusDictionary[aineenNimi];
+                    if (VastausDictionary.ContainsKey(aineenNimi))
+                    {
+                        // Lis‰‰ olemassa olevaan arvoon LaskutoimitusDictionaryn arvo
+                        VastausDictionary[aineenNimi] += aineDictionary[aineenNimi];
+                    }
+                    else
+                    {
+                        // Jos avainta ei ole viel‰ VastausDictionaryss‰, lis‰‰ se sinne
+                        VastausDictionary[aineenNimi] = aineDictionary[aineenNimi];
+                    }
                 }
             }
         }
@@ -164,7 +172,7 @@ namespace OmaProjekti_RuoanKoontiSovellus_Arthur
         {
             foreach (var aineenNimi in VastausDictionary.Keys)
             {
-                var label = ValinnatFlowLayoutPanel.Controls.Find($"Aine{aineenNimi}", true).FirstOrDefault() as Label;
+                var label = ValinnatFlowLayoutPanel.Controls.Find(aineenNimi, true).FirstOrDefault() as Label;
 
                 if (label != null)
                 {
