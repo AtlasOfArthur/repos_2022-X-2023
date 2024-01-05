@@ -12,17 +12,16 @@
         public string Juttu;
         public int SivuMaara;
         public bool Kuuluisa;
-        
+        // HUOM: Normaalisti kenttiä ei tyypitetä public tyyppisiksi. Lähde josta tämä selvisi ei kertonut miksi.
+        // Myöskään koulun materiaalissa ei mainittu mitään tästä. Ei edes sitä että tämä ei ole yleinen tapa.
 
         
 
         // OLETUSKONSTRUKTORI (Huomioi että konstruktoreilla ei ole oletus palautus tyyppiä koten muilla metodeilla)
         // (Konstruktori on siis metodi. Miksi tätä ei kerrottu koulun materiaalissa!? Koulun materiaali on muutenkin tosi usein hyvin epämääräinen. En ymmärrä siitä koskaan mitään.)
-        public Kirjasto() // Kuomioi, että sama nimi kuin luokalla (class). Kutsutaan kun luokan Kirjasto instanssi (ilmentymä) luodaan.
+        public Kirjasto(string kirjanNimi) // Kuomioi, että sama nimi kuin luokalla (class). Kutsutaan kun luokan Kirjasto instanssi (ilmentymä) luodaan.
         {
-
-            
-
+            this.KirjanNimi = kirjanNimi; // Huomioi että kentän nimi (luokan jäsen) on vsemmalla ja parametri on oikealla.
         } 
 
        /* YLIKUORMITETTU KONSTRUKTORI
