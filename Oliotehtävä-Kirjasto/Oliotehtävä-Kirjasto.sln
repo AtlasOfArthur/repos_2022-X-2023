@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oliotehtävä-Kirjasto", "Oliotehtävä-Kirjasto\Oliotehtävä-Kirjasto.csproj", "{EBA929BE-808E-4A18-AD0A-9412F63E032C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA929BE-808E-4A18-AD0A-9412F63E032C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA929BE-808E-4A18-AD0A-9412F63E032C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA929BE-808E-4A18-AD0A-9412F63E032C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA929BE-808E-4A18-AD0A-9412F63E032C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29C1F850-28CD-4EB4-91DF-E3F76B3697F2}
+	EndGlobalSection
+EndGlobal
