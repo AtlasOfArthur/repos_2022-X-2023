@@ -36,7 +36,32 @@
             this.KirjanNimi = kirjanNimi; // Huomioi että kentän nimi (luokan jäsen) on vsemmalla ja parametri on oikealla.
         } 
 
-       
+        public Kirjasto(string kirjailija, string kirjanNimi)
+        {
+            this.Kirjailija = kirjailija;
+            this.KirjanNimi = kirjanNimi;
+        }
+
+        public Kirjasto(string kirjailija, string kirjanNimi, string takakansi)
+        {
+            this.KirjanNimi = kirjanNimi;
+            this.Kirjailija = kirjailija;
+            this.Takakansi = takakansi;
+        }
+
+        // Suljen, koska:Error  	Type 'Kirjasto' already defines a member called 'Kirjasto' with the same parameter types 
+        /*
+        public Kirjasto (string lehdenNimi)
+        {
+            this.LehdenNimi = lehdenNimi;
+        }
+
+        public Kirjasto (string lehdenNimi, string juttu)
+        {
+            this.LehdenNimi = lehdenNimi;
+            this.Juttu = juttu;
+        }
+       */
 
 
 
