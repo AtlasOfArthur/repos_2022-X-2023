@@ -13,9 +13,11 @@
         public string Juttu;
         public int SivuMaara;
         public bool Kuuluisa;
+
         // HUOM: Normaalisti kenttiä ei tyypitetä public tyyppisiksi. Lähde josta tämä selvisi ei kertonut miksi.
         // Myöskään koulun materiaalissa ei mainittu mitään tästä. Ei edes sitä että tämä ei ole yleinen tapa.
 
+        public List<Lainaa> Lainaukset;
 
          // OLETUSKONSTRUKTORI (Huomioi että konstruktoreilla ei ole oletus palautus tyyppiä koten muilla metodeilla) Koulun materiaali ei mainitse tätä.
           // (Konstruktori on siis metodi. Miksi tätä ei kerrottu koulun materiaalissa!? Koulun materiaali on muutenkin tosi usein hyvin epämääräinen. En ymmärrä siitä koskaan mitään.)
@@ -24,6 +26,9 @@
         {
             // Tyhjä konstruktori. (Tämä on siis se mitä ohjelma tekisi automaattisesti jos konstruktoreita ei määritettäisi.)
             // Koulun materiaalissa ei ollut mitään mainintaa tästä.
+            Lainaukset = new List<Lainaa>(); /* Lainattavien lista alustetaan oletus konstruktorissa. Ei pääohjelmassa, vaikk sekin kyllä toimisi. Tämä on oikea tapa.
+            * "When ever you have a class and that class has a list of objects, make sure that that list is always initialized." 
+            */
         }
 
         // TÄMÄ EI OLE OLETUSKONSTRUKTORI.
@@ -75,6 +80,10 @@
 
         }*/
         
+        public class Lainaa
+        {
+
+        }
 
         //metodit esim:
 
