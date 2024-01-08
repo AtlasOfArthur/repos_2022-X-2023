@@ -17,6 +17,7 @@
         // HUOM: Normaalisti kenttiä ei tyypitetä public tyyppisiksi. Lähde josta tämä selvisi ei kertonut miksi.
         // Myöskään koulun materiaalissa ei mainittu mitään tästä. Ei edes sitä että tämä ei ole yleinen tapa.
 
+        //             ↓ Geneerinen parametri Käännös: (Yleinen parametri)
         public List<Lainaa> Lainaukset;
 
          // OLETUSKONSTRUKTORI (Huomioi että konstruktoreilla ei ole oletus palautus tyyppiä koten muilla metodeilla) Koulun materiaali ei mainitse tätä.
@@ -30,8 +31,9 @@
             * "When ever you have a class and that class has a list of objects, make sure that that list is always initialized." 
             */
         }
+        //Oletus konstruktori on TÄRKEÄ (tyhjä konstruktori asetta kaikki kirjaston jäsenet alkuarvoihin. Esim: bool = false, int = 0, string = " " , jne, jne)
 
-        // TÄMÄ EI OLE OLETUSKONSTRUKTORI.
+        // TÄMÄ SEURAAVA EI OLE OLETUSKONSTRUKTORI.
          /* YLIKUORMITETTU KONSTRUKTORI (Luulin että tämä on joku TOSI monimutkainen juttu, koska koulun materiaali ei kertonut
           * että kyse on niinkin perkeleen yksinkertaisesta asiasta, että ENSIMMÄINEN konstruktori on AINA oletus konstruktori
           * JA KAIKKI sitä seuraavat ovat AINA ylikuormitus konstruktoreita, koska voi olla vain 
@@ -42,12 +44,16 @@
         } 
 
         public Kirjasto(string kirjailija, string kirjanNimi)
-        {
+        { /* Kun overloadia käytetään, parametrien nimillä joita käytetään ei ole väliä, mutta sen sijaan niiden datatyypeillä, parametreilla ja järjestyksellä on väliä.
+           * Ei voi olla kahta constructoria joilla on täysin sama 'sormenjälki". */
             this.Kirjailija = kirjailija;
             this.KirjanNimi = kirjanNimi;
         }
 
         public Kirjasto(string kirjailija, string kirjanNimi, string takakansi)
+            : this() // Tämä tarkoittaa että tässä konstruktorissa oletus konstruktori (tyhjä konstruktori, koska () on tyhjä) kutsutan ennen kuin yllä olevaa konstruktoria kutsutaan
+            // Silloin lainaus listaa voidaan käyttää tässä, ilman että sitä tarvitsee kutsua erikseen.
+            // Tämä on hyödyllistä silloin jos tyhjässä konstruktorissa on esim monta listaa, koska silloin vältytään turhilta koodi riveiltä!
         {
             this.KirjanNimi = kirjanNimi;
             this.Kirjailija = kirjailija;
@@ -108,7 +114,7 @@
         {
             //luodaan esim. kirja-olio
             // Epäselvä tapa >> Kirjasto remesKirjaOlio = new Kirjasto();
-            var remesKirjaOlio = new Kirjasto(); // Parempi ja selkeämpi tapa. Koulun materiaali neuvoi epäselvän tavan. Molemmat ovat kuitenkin ihan fine.
+            var remesKirjaOlio = new Kirjasto(); // Parempi ja selkeämpi tapa. (Clean code) Koulun materiaali neuvoi epäselvän tavan. Molemmat ovat kuitenkin ihan fine.
             remesKirjaOlio.Kirjailija = "Ilkka Remes";
             remesKirjaOlio.KirjanNimi = "Kertomus kahdesta kaupungista";
             remesKirjaOlio.SivuMaara = 550;
