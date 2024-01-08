@@ -39,6 +39,10 @@
           * JA KAIKKI sitä seuraavat ovat AINA ylikuormitus konstruktoreita, koska voi olla vain 
           * yksi oletus konstruktori luokkaa kohden!!!) */
         public Kirjasto(string kirjanNimi) // Huomioi, että sama nimi kuin luokalla (class). Kutsutaan kun luokan Kirjasto instanssi (ilmentymä) luodaan.
+            : this() // Tämä tarkoittaa että tässä konstruktorissa oletus konstruktori (tyhjä konstruktori, koska () on tyhjä) kutsutan ennen kuin yllä olevaa konstruktoria kutsutaan
+                    // Silloin lainaus listaa voidaan käyttää tässä, ilman että sitä tarvitsee kutsua erikseen.
+                   // Tämä on hyödyllistä silloin jos tyhjässä konstruktorissa on esim monta listaa, koska silloin vältytään turhilta koodi riveiltä!
+
         {
             this.KirjanNimi = kirjanNimi; // Huomioi että kentän nimi (luokan jäsen) on vsemmalla ja parametri on oikealla.
         } 
@@ -51,12 +55,11 @@
         }
 
         public Kirjasto(string kirjailija, string kirjanNimi, string takakansi)
-            : this() // Tämä tarkoittaa että tässä konstruktorissa oletus konstruktori (tyhjä konstruktori, koska () on tyhjä) kutsutan ennen kuin yllä olevaa konstruktoria kutsutaan
-            // Silloin lainaus listaa voidaan käyttää tässä, ilman että sitä tarvitsee kutsua erikseen.
-            // Tämä on hyödyllistä silloin jos tyhjässä konstruktorissa on esim monta listaa, koska silloin vältytään turhilta koodi riveiltä!
+            : this(kirjanNimi) // Koska kirjanNimi on kutsuttu tässä ja kirjanNimi funtiossa on parametrittoman funktion kutsu, kutsutaan myös listaa täällä
+                               // (jos käsitin oikein)
         {
-            this.KirjanNimi = kirjanNimi;
-            this.Kirjailija = kirjailija;
+            /* this.KirjanNimi = kirjanNimi; */ // Ei tarvita tässä, koska kutsutaan : this funktiolla muualta
+            this.Kirjailija = kirjailija;       // Kaksi alempaa kutsutaan tässä erikseen, vaikka nekin kai voitaisiin kutsua ylemmästä konstruktorista
             this.Takakansi = takakansi;
         }
 
