@@ -61,7 +61,8 @@
             /* this.KirjanNimi = kirjanNimi; */ // Ei tarvita tässä, koska kutsutaan : this funktiolla muualta
             this.Kirjailija = kirjailija;       // Kaksi alempaa kutsutaan tässä erikseen, vaikka nekin kai voitaisiin kutsua ylemmästä konstruktorista
             this.Takakansi = takakansi;
-        }
+        }                                   // Lähde: https://www.youtube.com/watch?v=q7aWkjH3UUI
+                                            // Katso myös:  https://www.youtube.com/watch?v=vpT4-7YdV7M&list=TLPQMDgwMTIwMjQ2Lyc75BgXnw&index=2
 
         // Suljen, koska:Error  	Type 'Kirjasto' already defines a member called 'Kirjasto' with the same parameter types 
         /*
@@ -88,7 +89,7 @@
             _
 
         }*/
-        
+
         public class Lainaa
         {
 
